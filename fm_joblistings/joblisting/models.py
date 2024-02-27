@@ -39,7 +39,7 @@ class Job(models.Model):
     position = models.CharField(max_length=100)
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     role = models.CharField(max_length=2, choices=Role.choices)    
-    level = models.Charfield(max_length=1, choices=Level.choices, default=Level.JUNIOR)
+    level = models.CharField(max_length=1, choices=Level.choices, default=Level.JUNIOR)
     contract = models.CharField(max_length=2, choices=Contract.choices, default=Contract.FULL_TIME)
     posted_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
