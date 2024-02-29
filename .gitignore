@@ -9,3 +9,6 @@ db.sqlite3
 
 # Project files
 assets/
+
+# Node
+node_modules/

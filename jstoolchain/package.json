@@ -1,0 +1,18 @@
+{
+  "name": "jstoolchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "postcss css/tailwind.css -o ../fm_joblistings/static/css/tailwind-styles.css --watch",
+    "build": "postcss css/tailwind.css -o ../fm_joblistings/static/css/tailwind-styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.1"
+  }
+}
