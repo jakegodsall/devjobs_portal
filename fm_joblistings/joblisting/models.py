@@ -48,8 +48,8 @@ class Job(models.Model):
     is_new = models.BooleanField(default=True)
     location = models.CharField(max_length=100)
     salary = models.PositiveBigIntegerField()
-    languages = models.ManyToManyField(Language)
-    tools = models.ManyToManyField(Tool)
+    languages = models.ManyToManyField(Language, blank=True)
+    tools = models.ManyToManyField(Tool, blank=True)
 
     def __str__(self):
-        return f"self.position (self.company)"
+        return f"{self.position} ({self.company})"
