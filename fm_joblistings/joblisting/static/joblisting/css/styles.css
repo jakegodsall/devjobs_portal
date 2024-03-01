@@ -498,10 +498,27 @@ video {
 .block {
   display: block;
 }
+.bg-\[\#5ca5a5\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(92 165 165 / var(--tw-bg-opacity));
+}
 .text-\[5rem\] {
   font-size: 5rem;
 }
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+:root {
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
 }
