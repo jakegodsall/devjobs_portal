@@ -509,8 +509,14 @@ video {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
+.text-main-text {
+  color: var(--main-text);
+}
 
 :root {
+  --main-text: #2b3939;
+  --secondary-text: ##5ca5a5;
+  --main-background: rgba(92, 165, 165, 0.1);
 }
 
 *,
@@ -521,4 +527,8 @@ video {
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  background-color: #effafa;
 }

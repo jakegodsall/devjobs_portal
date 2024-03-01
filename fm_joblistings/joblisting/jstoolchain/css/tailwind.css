@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 :root {
+  --main-text: #2b3939;
+  --secondary-text: ##5ca5a5;
+  --main-background: rgba(92, 165, 165, 0.1);
 }
 
 *,
@@ -13,4 +16,8 @@
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  background-color: #effafa;
 }
