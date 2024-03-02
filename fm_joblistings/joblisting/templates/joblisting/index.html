@@ -1,6 +1,6 @@
 {% extends 'joblisting/base.html' %} {% block content %}
 <sectiom>
-  <ul class="flex flex-col gap-[4rem] items-center">
+  <ul class="flex flex-col gap-[4rem] items-center mt-[5rem]">
     {% for joblisting in joblistings %}
     <li class="w-4/5">{% include "joblisting/job_item.html" with joblisting=joblisting %}</li>
     {% endfor %}

@@ -1,8 +1,25 @@
-<div class="w-full bg-white px-[2.4rem] pb-[2.4rem] rounded-[0.5rem]">
-  <div class="flex">
+<div
+  class="w-full bg-white px-[2.4rem] pb-[2.4rem] rounded-[0.5rem] pt-[3.2rem]"
+>
+  <div class="flex items-center gap-[4rem]">
     <p class="text-[#5CA5A5] text-[1.3rem] font-bold">
       {{ joblisting.company }}
     </p>
+    <div class="flex items-center gap-[0.8rem]">
+      {% if joblisting.is_new %}
+      <div
+        class="uppercase bg-[#5CA5A5] text-white text-[1.4rem] font-bold py-[0.3rem] px-[0.8rem] rounded-full"
+      >
+        New!
+      </div>
+      {% endif %} {% if joblisting.is_featured %}
+      <div
+        class="uppercase bg-[#2B3939] text-white text-[1.4rem] font-bold py-[0.3rem] px-[0.8rem] rounded-full"
+      >
+        Featured
+      </div>
+      {% endif %}
+    </div>
   </div>
   <p class="text-primary-text text-[1.5rem] font-bold">
     {{ joblisting.position }}

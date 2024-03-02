@@ -1,4 +1,6 @@
+from datetime import datetime, timedelta
 from django.db import models
+from django.utils.timezone import make_aware, get_default_timezone
 
 
 class Company(models.Model):
@@ -45,7 +47,6 @@ class Job(models.Model):
     posted_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     is_featured = models.BooleanField(default=False)
-    is_new = models.BooleanField(default=True)
     location = models.CharField(max_length=100)
     salary = models.PositiveBigIntegerField()
     languages = models.ManyToManyField(Language, blank=True)
@@ -53,3 +54,13 @@ class Job(models.Model):
 
     def __str__(self):
         return f"{self.position} ({self.company})"
+    
+    def is_new(self):
+        """
+        Returns whether the job was posted within the last week.
+
+        Returns:
+            bool: Whether the job was posted within the last week.
+        """
+        one_week_ago = make_aware(datetime.now(), get_default_timezone()) - timedelta(weeks=1)
+        return self.posted_at > one_week_ago
