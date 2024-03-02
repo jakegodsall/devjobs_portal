@@ -498,24 +498,64 @@ video {
 .block {
   display: block;
 }
+.flex {
+  display: flex;
+}
+.w-4\/5 {
+  width: 80%;
+}
+.w-full {
+  width: 100%;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.gap-\[4rem\] {
+  gap: 4rem;
+}
+.rounded-\[0\.5rem\] {
+  border-radius: 0.5rem;
+}
 .bg-\[\#5ca5a5\] {
   --tw-bg-opacity: 1;
   background-color: rgb(92 165 165 / var(--tw-bg-opacity));
 }
-.text-\[5rem\] {
-  font-size: 5rem;
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.text-red-500 {
+.px-\[2\.4rem\] {
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+.pb-\[2\.4rem\] {
+  padding-bottom: 2.4rem;
+}
+.text-\[1\.5rem\] {
+  font-size: 1.5rem;
+}
+.text-\[1\.3rem\] {
+  font-size: 1.3rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+.text-secondary-text {
+  color: var(--secondary-text);
+}
+.text-\[\#5CA5A5\] {
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-.text-main-text {
-  color: var(--main-text);
+  color: rgb(92 165 165 / var(--tw-text-opacity));
 }
 
-:root {
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+root {
   --main-text: #2b3939;
-  --secondary-text: ##5ca5a5;
+  --secondary-text: #5ca5a5;
   --main-background: rgba(92, 165, 165, 0.1);
 }
 
@@ -527,6 +567,7 @@ video {
 
 html {
   font-size: 62.5%;
+  font-family: "League Spartan", sans-serif;
 }
 
 body {
