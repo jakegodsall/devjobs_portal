@@ -498,17 +498,38 @@ video {
 .mt-\[5rem\] {
   margin-top: 5rem;
 }
+.mb-\[0\.8rem\] {
+  margin-bottom: 0.8rem;
+}
+.mb-\[1\.5rem\] {
+  margin-bottom: 1.5rem;
+}
+.mb-\[1\.4rem\] {
+  margin-bottom: 1.4rem;
+}
 .block {
   display: block;
 }
 .flex {
   display: flex;
 }
+.h-\[0\.4rem\] {
+  height: 0.4rem;
+}
 .w-4\/5 {
   width: 80%;
 }
+.w-\[37\.5rem\] {
+  width: 37.5rem;
+}
 .w-full {
   width: 100%;
+}
+.w-screen {
+  width: 100vw;
+}
+.w-\[0\.4rem\] {
+  width: 0.4rem;
 }
 .flex-col {
   flex-direction: column;
@@ -522,11 +543,37 @@ video {
 .gap-\[4rem\] {
   gap: 4rem;
 }
+.gap-\[1\.2rem\] {
+  gap: 1.2rem;
+}
+.gap-\[2\.8rem\] {
+  gap: 2.8rem;
+}
 .rounded-\[0\.5rem\] {
   border-radius: 0.5rem;
 }
 .rounded-full {
   border-radius: 9999px;
+}
+.border-b-\[1px\] {
+  border-bottom-width: 1px;
+}
+.border-\[\] {
+  border-color: ;
+}
+.border-current {
+  border-color: currentColor;
+}
+.border-\[\#B7C4C4\;\] {
+  border-color: #B7C4C4;;
+}
+.border-\[\#B7C4C4\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(183 196 196 / var(--tw-border-opacity));
+}
+.bg-\[\#2B3939\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(43 57 57 / var(--tw-bg-opacity));
 }
 .bg-\[\#5CA5A5\] {
   --tw-bg-opacity: 1;
@@ -540,12 +587,8 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-\[\#2B3939\;\] {
-  background-color: #2B3939;;
-}
-.bg-\[\#2B3939\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(43 57 57 / var(--tw-bg-opacity));
+.bg-current {
+  background-color: currentColor;
 }
 .px-\[0\.8rem\] {
   padding-left: 0.8rem;
@@ -565,8 +608,8 @@ video {
 .pt-\[3\.2rem\] {
   padding-top: 3.2rem;
 }
-.pt-\[5rem\] {
-  padding-top: 5rem;
+.pb-\[1\.5rem\] {
+  padding-bottom: 1.5rem;
 }
 .text-\[1\.3rem\] {
   font-size: 1.3rem;
@@ -577,8 +620,20 @@ video {
 .text-\[1\.5rem\] {
   font-size: 1.5rem;
 }
+.text-\[1\.6rem\] {
+  font-size: 1.6rem;
+}
 .font-bold {
   font-weight: 700;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-medium {
+  font-weight: 500;
 }
 .uppercase {
   text-transform: uppercase;
@@ -590,6 +645,19 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-\[\] {
+  color: ;
+}
+.text-\[\#\] {
+  color: #;
+}
+.text-\[\#7c\] {
+  color: #7c;
+}
+.text-\[\#7c8f8f\] {
+  --tw-text-opacity: 1;
+  color: rgb(124 143 143 / var(--tw-text-opacity));
 }
 
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");

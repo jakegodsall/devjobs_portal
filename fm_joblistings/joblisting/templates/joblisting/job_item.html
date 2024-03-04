@@ -2,26 +2,37 @@
   class="w-full bg-white px-[2.4rem] pb-[2.4rem] rounded-[0.5rem] pt-[3.2rem]"
 >
   <div class="flex items-center gap-[4rem]">
-    <p class="text-[#5CA5A5] text-[1.3rem] font-bold">
-      {{ joblisting.company }}
-    </p>
-    <div class="flex items-center gap-[0.8rem]">
-      {% if joblisting.is_new %}
-      <div
-        class="uppercase bg-[#5CA5A5] text-white text-[1.4rem] font-bold py-[0.3rem] px-[0.8rem] rounded-full"
-      >
-        New!
+    <div class="mb-[1.4rem] flex items-center gap-[2.8rem]">
+      <p class="text-[#5CA5A5] text-[1.3rem] font-bold">
+        {{ joblisting.company }}
+      </p>
+      <div class="flex items-center gap-[0.8rem]">
+        {% if joblisting.is_new %}
+        <div
+          class="uppercase bg-[#5CA5A5] text-white text-[1.4rem] font-bold py-[0.3rem] px-[0.8rem] rounded-full"
+        >
+          New!
+        </div>
+        {% endif %} {% if joblisting.is_featured %}
+        <div
+          class="uppercase bg-[#2B3939] text-white text-[1.4rem] font-bold py-[0.3rem] px-[0.8rem] rounded-full"
+        >
+          Featured
+        </div>
+        {% endif %}
       </div>
-      {% endif %} {% if joblisting.is_featured %}
-      <div
-        class="uppercase bg-[#2B3939] text-white text-[1.4rem] font-bold py-[0.3rem] px-[0.8rem] rounded-full"
-      >
-        Featured
-      </div>
-      {% endif %}
     </div>
   </div>
-  <p class="text-primary-text text-[1.5rem] font-bold">
+  <p class="text-primary-text text-[1.5rem] font-bold mb-[0.8rem]">
     {{ joblisting.position }}
   </p>
+  <ul
+    class="flex gap-[1.2rem] items-center text-[1.6rem] font-medium text-[#7c8f8f] pb-[1.5rem] border-b-[1px] border-[#B7C4C4]"
+  >
+    <li>{{ joblisting.format_duration }}</li>
+    <li class="w-[0.4rem] h-[0.4rem] rounded-full bg-current"></li>
+    <li>{{ joblisting.get_contract_display }}</li>
+    <li class="w-[0.4rem] h-[0.4rem] rounded-full bg-current"></li>
+    <li>{{ joblisting.location }}</li>
+  </ul>
 </div>
