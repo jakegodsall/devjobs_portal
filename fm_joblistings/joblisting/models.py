@@ -64,3 +64,25 @@ class Job(models.Model):
         """
         one_week_ago = make_aware(datetime.now(), get_default_timezone()) - timedelta(weeks=1)
         return self.posted_at > one_week_ago
+    
+    def format_duration(self):
+        """
+        Returns a human-friendly representation of the duration since the job was posted.
+
+        Returns:
+            str: A human-friendly representation of the duration.
+        """
+        DAYS_IN_MONTH = 30
+        DAYS_IN_WEEK = 7
+
+        total_days = (make_aware(datetime.now(), get_default_timezone()) - self.posted_at).days
+        months, remainder = divmod(total_days, DAYS_IN_MONTH)
+        weeks, days = divmod(remainder, DAYS_IN_WEEK)
+
+        result = { "months": months, "weeks": weeks, "days": days }
+
+        if result.get("months") != 0:
+            return f"{result.get('months')}m ago"
+        if result.get("weeks") != 0:
+            return f"{result.get('weeks')}w ago"
+        return f"{result.get('days')}d ago"
