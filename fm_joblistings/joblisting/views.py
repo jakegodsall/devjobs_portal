@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Job
+from .forms import JobForm
 
 # Create your views here.
 def index(request):
@@ -10,3 +11,15 @@ def index(request):
         'joblisting/index.html',
         {"joblistings": joblistings}
     )
+
+def create_job(request):
+    if request.method == "POST":
+        form = JobForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect("index")
+
+    form = JobForm()
+    return render(request, "joblisting/create.html", {"form": form})
