@@ -19,7 +19,7 @@ def create_job(request):
         if form.is_valid():
             form.save()
 
-            return redirect("index")
+            return redirect("jobs:index")
 
     form = JobForm()
     return render(request, "joblisting/create.html", {"form": form})
