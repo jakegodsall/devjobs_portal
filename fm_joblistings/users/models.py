@@ -23,6 +23,9 @@ class UserProfile(models.Model):
     email = models.EmailField(max_length=254, unique=True)
     user_type = models.CharField(max_length=10, choices=Type.choices)
 
+    def __str__(self):
+        return self.user.username
+
 class Client(models.Model):
     """
     The Client model is specifically designed for users focused on applying to jobs.
@@ -44,6 +47,9 @@ class Client(models.Model):
     avatar = models.ImageField()
     cv = models.FileField()
 
+    def __str__(self):
+        self.profile
+
 class Company(models.Model):
     """
     The Company model caters to users that host job listings, providing them with
@@ -62,3 +68,9 @@ class Company(models.Model):
     company_name = models.CharField(max_length=100)
     logo = models.FileField()
     location = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.company_name
+
+    class Meta:
+        verbose_name_plural = "companies"
