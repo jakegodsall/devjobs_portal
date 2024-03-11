@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   </head>
   <body>
-    <img class="bg-[#5ca5a5] w-screen" src="{% static 'joblisting/images/bg-header-mobile.svg' %}" alt="background" />
+    <div class="">
+      {% include 'partials/_navigation.html' %}
+      <img class="bg-[#5ca5a5] w-screen" src="{% static 'images/bg-header-mobile.svg' %}" alt="background" />
+    </div>
     {% block content %}
 
     {% endblock %}
