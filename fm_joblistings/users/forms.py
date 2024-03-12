@@ -4,15 +4,27 @@ from django.contrib.auth import get_user_model
 from .models import Client, Company
 
 class UserProfileForm(UserCreationForm):
+    CHOICES = [("Client", "Client"), ("Company", "Company")]
+
+    user_type = forms.CharField(label="User Type", widget=forms.RadioSelect(choices=CHOICES))
+
     class Meta(UserCreationForm.Meta):
         model = get_user_model()
         fields = ["username", "email", "password1", "password2", "user_type"]
+        widgets = {
+            "username": forms.TextInput(attrs={"placeholder": "Username", "class": "form-text-input"}),
+            "email": forms.EmailInput(attrs={"placeholder": "Email", "class": "form-text-input"}),
+            "password1": forms.PasswordInput(attrs={"placeholder": "Password", "class": "form-text-input"}),
+            "password2": forms.PasswordInput(attrs={"placeholder": "<PASSWORD>", "class": "form-text-input"}),
+        }
+
 
 
 class ClientForm(forms.ModelForm):
     class Meta:
         model = Client
         fields = ["first_name", "last_name", "avatar", "cv"]
+
 
 
 class CompanyForm(forms.ModelForm):
