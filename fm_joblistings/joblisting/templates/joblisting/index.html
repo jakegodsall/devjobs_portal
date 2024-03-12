@@ -2,7 +2,7 @@
 <sectiom>
   <ul class="flex flex-col gap-[4rem] items-center mt-[5rem]">
     {% for joblisting in joblistings %}
-    <li class="w-4/5">{% include "joblisting/job_item.html" with joblisting=joblisting %}</li>
+    <li class="w-4/5">{% include "joblisting/partials/_job_item.html" with joblisting=joblisting %}</li>
     {% endfor %}
   </ul>
 </section>

@@ -35,11 +35,13 @@
     <li class="w-[0.4rem] h-[0.4rem] rounded-full bg-current"></li>
     <li>{{ joblisting.location }}</li>
   </ul>
-  <ul class="flex flex-wrap">
+  <ul class="flex flex-wrap gap-[1.6rem] mt-[1.6rem]">
+    {% include 'joblisting/partials/_skill_badge.html' with skill=joblisting.get_role_display %}
+    {% include 'joblisting/partials/_skill_badge.html' with skill=joblisting.get_level_display %}
     {% for language in joblisting.languages.all %}
-    <div>{{ language }}</div>
+    {% include 'joblisting/partials/_skill_badge.html' with skill=language %}
     {% endfor %} {% for tool in joblisting.tools.all %}
-    <div>{{ tool }}</div>
+    {% include 'joblisting/partials/_skill_badge.html' with skill=tool %}
     {% endfor %}
   </ul>
 </div>
