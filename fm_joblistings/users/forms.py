@@ -6,11 +6,11 @@ from .models import Client, Company
 class UserProfileForm(UserCreationForm):
     CHOICES = [("Client", "Client"), ("Company", "Company")]
 
-    user_type = forms.CharField(label="User Type", widget=forms.RadioSelect(choices=CHOICES))
+    user_type = forms.ChoiceField(label="User Type", choices=CHOICES)
 
     class Meta(UserCreationForm.Meta):
         model = get_user_model()
-        fields = ["username", "email", "password1", "password2", "user_type"]
+        fields = ["user_type", "username", "email", "password1", "password2"]
         widgets = {
             "username": forms.TextInput(attrs={"placeholder": "Username", "class": "form-text-input"}),
             "email": forms.EmailInput(attrs={"placeholder": "Email", "class": "form-text-input"}),
