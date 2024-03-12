@@ -19,6 +19,8 @@ def login_user(request):
 # Create your views here.
 def register_user(request):
     if request.method == "POST":
+        print(request.POST)
+
         profile_form = UserProfileForm(request.POST)
 
         if profile_form.is_valid():
@@ -27,6 +29,9 @@ def register_user(request):
                 return redirect("users:register_client")
             if profile_form.user_type == "company":
                 return redirect("users:register_company")
+        else:
+            print(profile_form.errors)
+            return render(request, "users/register_user.html", {"profile_form": profile_form})
         
     profile_form = UserProfileForm()
     return render(request, "users/register_user.html", {
