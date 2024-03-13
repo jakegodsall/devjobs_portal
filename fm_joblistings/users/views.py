@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, get_user_model
 from django.contrib.auth.forms import AuthenticationForm
 
 from .forms import UserProfileForm, ClientForm, CompanyForm
@@ -23,14 +23,14 @@ def register_user(request):
         profile_form = UserProfileForm(request.POST)
 
         if profile_form.is_valid():
-            profile_form.save()
+            user = profile_form.save()
 
             user_type = profile_form.cleaned_data["user_type"].lower()
             print("User type: ", user_type)
             if user_type == "client":
-                return redirect("users:register_client")
+                return redirect("users:register_client", user_id=user.pk)
             if user_type == "company":
-                return redirect("users:register_company")
+                return redirect("users:register_company", user_id=user.pk)
         else:
             print(profile_form.initial)
             print(profile_form.errors)
@@ -42,9 +42,20 @@ def register_user(request):
     })
 
 
-def register_company(request):
+def register_company(request, user_id):
+    user = get_user_model().objects.get(pk=user_id)
+    print("user_id: ", user_id)
     if request.method == "POST":
-        ...
+        form = CompanyForm(request.POST, request.FILES)
+        print("working so far")
+        print(form.data)
+        if form.is_valid():
+            company_profile = form.save(commit=False)
+            company_profile.user = user
+            company_profile.save()
+            return redirect("users:profile")
+        else:
+            print(form.errors)
     company_form = CompanyForm()
     return render(request, "users/register_company.html", { "company_form": company_form})
 

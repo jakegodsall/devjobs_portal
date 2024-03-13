@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-  <form submit="POST">
+  <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ company_form }}
     <input type="submit" value="Create company profile" />
