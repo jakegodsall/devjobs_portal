@@ -19,17 +19,20 @@ def login_user(request):
 # Create your views here.
 def register_user(request):
     if request.method == "POST":
-        print(request.POST)
 
         profile_form = UserProfileForm(request.POST)
 
         if profile_form.is_valid():
             profile_form.save()
-            if profile_form.user_type == "client":
+
+            user_type = profile_form.cleaned_data["user_type"].lower()
+            print("User type: ", user_type)
+            if user_type == "client":
                 return redirect("users:register_client")
-            if profile_form.user_type == "company":
+            if user_type == "company":
                 return redirect("users:register_company")
         else:
+            print(profile_form.initial)
             print(profile_form.errors)
             return render(request, "users/register_user.html", {"profile_form": profile_form})
         

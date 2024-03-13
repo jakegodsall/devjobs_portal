@@ -1,26 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
   <div class="flex flex-col items-center">
-    <form method="POST" class="w-4/5 bg-white rounded-lg p-[2rem]">
+    <form method="POST" class="w-4/5 bg-white rounded-lg p-[2rem]" novalidate>
       {% csrf_token %}
       <div class="flex gap-[2rem] mb-[2rem]">
-      {% for value, label in profile_form.user_type.field.choices %}
+      {% for choice in profile_form.user_type.field.choices %}
             <div class="flex items-center gap-[0.5rem]">
-                <input type="radio" id="id_choice_field_{{forloop.counter}}" name="choice_field" value="{{ value }}" class="form-radio h-5 w-5 text-blue-600" {% if form.choice_field.value == value %} checked {% endif %}>
-                <label for="id_choice_field_{{forloop.counter}}" class="text-[1.6rem]">{{ label }}</label> 
+                <input type="radio" id="user_type_{{forloop.counter}}" name="user_type" value="{{ choice.0 }}" class="form-radio h-5 w-5 text-blue-600" {% if profile_form.user_type.value == choice.0 %} checked="checked" {% endif %}>
+                <label for="id_choice_field_{{forloop.counter}}" class="text-[1.6rem]">{{ choice.1 }}</label> 
             </div>
       {% endfor %}
-      </div>
+    </div>
+    {% for error in profile_form.user_type.errors %}
+      <p class="text-red-500 text-xs italic">{{ error }}</p>
+    {% endfor %}
       <div>
         <label for="{{ profile_form.username.id_for_label }}" class="text-[1.6rem]" >{{ profile_form.username.label }}</label>
-        <input type="text" id="{{ profile_form.username.id_for_label }}" class="text-[2rem]" name="username" value="{{ profile_form.username.value }}" />
+        <input type="text" id="{{ profile_form.username.id_for_label }}" class="text-[2rem]" name="username" value="{{ profile_form.username.value|default_if_none:"" }}" />
         {% for error in profile_form.username.errors %}
           <p class="text-red-500 text-xs italic">{{ error }}</p>
         {% endfor %}
       </div>
       <div>
         <label for="{{ profile_form.email.id_for_label }}" class="text-[1.6rem]" >{{ profile_form.email.label }}</label>
-        <input type="email" id="{{ profile_form.email.id_for_label }}" class="text-[2rem]" name="email" value="{{ profile_form.email.value }}" />
+        <input type="email" id="{{ profile_form.email.id_for_label }}" class="text-[2rem]" name="email" value="{{ profile_form.email.value|default_if_none:"" }}" />
         {% for error in profile_form.email.errors %}
           <p class="text-red-500 text-xs italic">{{ error }}</p>
         {% endfor %}
