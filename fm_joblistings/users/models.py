@@ -60,7 +60,7 @@ class Client(models.Model):
 
 
     def __str__(self):
-        self.profile.username
+        return f"{self.first_name} {self.last_name}"
 
 
 class Company(models.Model):

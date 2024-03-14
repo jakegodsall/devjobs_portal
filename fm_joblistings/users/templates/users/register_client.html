@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-  <form method="POST">
+  <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ client_form }}
     <input type="submit" value="Create client profile" />
