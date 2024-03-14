@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="profile-container">
+    <h2>User Profile</h2>
+    <div class="profile-info">
+      <p>
+        <strong>Username:</strong> {{ user_profile.username }}
+      </p>
+      <p>
+        <strong>Email:</strong> {{ user_profile.email }}
+      </p>
+      <!-- Display additional profile information -->
+      <p>
+        <strong>First Name:</strong> {{ user_profile.first_name }}
+      </p>
+      <p>
+        <strong>Last Name:</strong> {{ user_profile.last_name }}
+      </p>
+      <!-- If your user profile includes a profile image -->
+      {% if user_profile.profile_image %}
+        <div class="profile-image">
+          <img src="{{ user_profile.profile_image.url }}" alt="Profile Image" />
+        </div>
+      {% endif %}
+      <!-- Add more fields as necessary -->
+    </div>
+  </div>
+{% endblock %}

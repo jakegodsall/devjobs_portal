@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 
-from .models import UserProfile
+from .models import UserProfile, Company, Client
 from .forms import UserProfileForm, ClientForm, CompanyForm
 
 def login_user(request):
@@ -72,5 +73,22 @@ def register_client(request, user_id):
     client_form = ClientForm()
     return render(request, "users/register_client.html", { "client_form":  client_form})
 
+@login_required
 def profile(request):
-    return "Hello"
+    user_profile = request.user
+    user_type = user_profile.user_type.lower()
+    print("USER TYPE: ", user_type)
+    if user_type == "client":
+        client_profile = get_object_or_404(Client, profile=user_profile)
+        print(client_profile)
+        return render(request, "users/client_profile.html", {
+            "user_profile": user_profile,
+            "client_profile": client_profile
+        })
+    if user_type == "company":
+        company_profile = get_object_or_404(Company, profile=user_profile)
+        return render(request, "users/company_profile.html", {
+            "user_profile": user_profile,
+            "company_profile": company_profile
+        })
+    return redirect("users:login")
