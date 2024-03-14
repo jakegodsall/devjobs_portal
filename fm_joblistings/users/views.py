@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, get_user_model
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 
+from .models import UserProfile
 from .forms import UserProfileForm, ClientForm, CompanyForm
 
 def login_user(request):
@@ -43,15 +44,16 @@ def register_user(request):
 
 
 def register_company(request, user_id):
-    user = get_user_model().objects.get(pk=user_id)
+    user = get_object_or_404(UserProfile, pk=user_id)
     print("user_id: ", user_id)
+    print(user)
     if request.method == "POST":
         form = CompanyForm(request.POST, request.FILES)
         print("working so far")
         print(form.data)
         if form.is_valid():
             company_profile = form.save(commit=False)
-            company_profile.user = user
+            company_profile.profile = user
             company_profile.save()
             return redirect("users:profile")
         else:
