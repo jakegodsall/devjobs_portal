@@ -52,7 +52,7 @@ class Client(models.Model):
         cv (FileField): The client's curriculum vitae, enabling job applications.
     """
 
-    profile = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
+    profile = models.OneToOneField(UserProfile, on_delete=models.CASCADE, blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     avatar = models.ImageField()
@@ -77,7 +77,7 @@ class Company(models.Model):
         location (CharField): The physical location or headquarters of the company.
     """
 
-    profile = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
+    profile = models.OneToOneField(UserProfile, on_delete=models.CASCADE, blank=True)
     company_name = models.CharField(max_length=100)
     logo = models.FileField()
     location = models.CharField(max_length=100)

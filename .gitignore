@@ -9,6 +9,7 @@ db.sqlite3
 
 # Project files
 assets/
+bootstrap_data/ 
 
 # Node
 node_modules/
