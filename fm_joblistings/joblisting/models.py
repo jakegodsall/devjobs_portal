@@ -2,17 +2,8 @@ from datetime import datetime, timedelta
 from django.db import models
 from django.utils.timezone import make_aware, get_default_timezone
 
+from users.models import Company
 
-class Company(models.Model):
-    name = models.CharField(max_length=100)
-    logo = models.FileField(upload_to='logos/', null=True)
-    
-    def __str__(self):
-        return self.name
-    
-    class Meta:
-        verbose_name_plural = "companies"
-    
 
 class Language(models.Model):
     name = models.CharField(max_length=100)
