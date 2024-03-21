@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   </head>
   <body>
-    <div class="">
-      {% include 'partials/_navigation.html' %}
+    <div class="relative">
+      {% include 'partials/_navigation_unauthenticated.html' %}
       <img class="bg-[#5ca5a5] w-screen" src="{% static 'images/bg-header-mobile.svg' %}" alt="background" />
     </div>
     {% block content %}
