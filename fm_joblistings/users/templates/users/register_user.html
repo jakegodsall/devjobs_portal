@@ -1,48 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div class="flex flex-col items-center">
-    <form method="POST" class="w-4/5 bg-white rounded-lg p-[2rem]" novalidate>
+  <div class="flex flex-col items-center mt-[5rem]">
+    <form method="POST" class="w-4/5 bg-white rounded-[0.8rem] p-[3rem] shadow-lg" novalidate>
       {% csrf_token %}
       <div class="flex gap-[2rem] mb-[2rem]">
       {% for choice in profile_form.user_type.field.choices %}
             <div class="flex items-center gap-[0.5rem]">
                 <input type="radio" id="user_type_{{forloop.counter}}" name="user_type" value="{{ choice.0 }}" class="form-radio h-5 w-5 text-blue-600" {% if profile_form.user_type.value == choice.0 %} checked="checked" {% endif %}>
-                <label for="id_choice_field_{{forloop.counter}}" class="text-[1.6rem]">{{ choice.1 }}</label> 
+                <label for="id_choice_field_{{forloop.counter}}" class="text-[1.6rem] text-gray-500">{{ choice.1 }}</label> 
             </div>
       {% endfor %}
     </div>
-    {% for error in profile_form.user_type.errors %}
-      <p class="text-red-500 text-xs italic">{{ error }}</p>
-    {% endfor %}
-      <div>
-        <label for="{{ profile_form.username.id_for_label }}" class="text-[1.6rem]" >{{ profile_form.username.label }}</label>
-        <input type="text" id="{{ profile_form.username.id_for_label }}" class="text-[2rem]" name="username" value="{{ profile_form.username.value|default_if_none:"" }}" />
-        {% for error in profile_form.username.errors %}
-          <p class="text-red-500 text-xs italic">{{ error }}</p>
-        {% endfor %}
-      </div>
-      <div>
-        <label for="{{ profile_form.email.id_for_label }}" class="text-[1.6rem]" >{{ profile_form.email.label }}</label>
-        <input type="email" id="{{ profile_form.email.id_for_label }}" class="text-[2rem]" name="email" value="{{ profile_form.email.value|default_if_none:"" }}" />
-        {% for error in profile_form.email.errors %}
-          <p class="text-red-500 text-xs italic">{{ error }}</p>
-        {% endfor %}
-      </div>
-      <div>
-        <label for="{{ profile_form.password1.id_for_label }}" class="text-[1.6rem]" >{{ profile_form.password1.label }}</label>
-        <input type="password" id="{{ profile_form.password1.id_for_label }}" class="text-[2rem]" name="password1" />
-        {% for error in profile_form.password1.errors %}
-          <p class="text-red-500 text-xs italic">{{ error }}</p>
-        {% endfor %}
-      </div>
-      <div>
-        <label for="{{ profile_form.password2.id_for_label }}" class="text-[1.6rem]" >{{ profile_form.password2.label }}</label>
-        <input type="password" id="{{ profile_form.password2.id_for_label }}" class="text-[2rem]" name="password2" />
-        {% for error in profile_form.password2.errors %}
-          <p class="text-red-500 text-xs italic">{{ error }}</p>
-        {% endfor %}
-      </div>
+    <div class="flex flex-col gap-[2rem]">
+
+      {% include 'partials/_form_floating_input.html' with type="text" name="username" id="username" placeholder="Username" value=profile_form.username.value|default_if_none:'' %}
+      {% include 'partials/_form_floating_input.html' with type="email" name="email" id="email" placeholder="Email" value=profile_form.email.value|default_if_none:'' %}
+      {% include 'partials/_form_floating_input.html' with type="password" name="password1" id="password1" placeholder="Password" value=profile_form.password1.value|default_if_none:'' %}
+      {% include 'partials/_form_floating_input.html' with type="password" name="password2" id="password2" placeholder="Confirm Password" value=profile_form.password2.value|default_if_none:'' %}
       {% include 'partials/_submit_button.html' with value="Create profile" %}
+    </div>
     </form>
   </div>
 {% endblock %}
