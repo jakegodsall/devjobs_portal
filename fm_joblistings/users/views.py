@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 
@@ -18,7 +18,10 @@ def login_user(request):
     return render(request, "users/login.html", {"form": form})
         
 
-# Create your views here.
+def logout_user(request):
+    logout(request)
+    return redirect("jobs:index")
+
 def register_user(request):
     if request.method == "POST":
 
