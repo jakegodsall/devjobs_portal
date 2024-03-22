@@ -1,4 +1,11 @@
 {% extends 'base.html' %} {% block content %}
+{% if messages %}
+  <ul class="flex flex-col w-full bg-white p-[1rem] items-center">
+    {% for message in messages %}
+      <li class="text-[1.6rem] text-[#5CA5A5] font-bold ">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
 <sectiom>
   <ul class="flex flex-col gap-[4rem] items-center mt-[5rem]">
     {% for joblisting in joblistings %}
