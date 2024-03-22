@@ -11,7 +11,7 @@
   <form class="bg-white p-[3rem] flex flex-col gap-[2rem] w-[90%] max-w-[400px] rounded-[0.8rem] shadow-lg" method="POST">
     {% csrf_token %}
     {% include 'partials/_form_floating_input.html' with type="text" name="username" id="username" placeholder="Username" value=form.username.value|default_if_none:'' %}
-    {% include 'partials/_form_floating_input.html' with type="password" name="password1" id="password1" placeholder="Password" value=form.password1.value|default_if_none:'' %}
+    {% include 'partials/_form_floating_input.html' with type="password" name="password" id="password" placeholder="Password" value=form.password.value|default_if_none:'' %}
     <input class="text-[1.6rem]" type="submit" value="Login" />
   </form>
 </div>
