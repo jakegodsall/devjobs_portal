@@ -1,19 +1,32 @@
+# routing
 from django.shortcuts import render, redirect, get_object_or_404
+# authentication
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
+# messages
+from django.contrib import messages
 
 from .models import UserProfile, Company, Client
 from .forms import UserProfileForm, ClientForm, CompanyForm
 
 def login_user(request):
     if request.method == "POST":
+        # get the user credentials from the form submission
         username = request.POST["username"]
         password = request.POST["password"]
+        # authenticate the user
         user = authenticate(request, username=username, password=password)
         if user is not None:
+            # if user is authenticated connect user to current session
             login(request, user)
+            # create login success message
+            messages.success(request, 'You have successfully logged in')
+            # redirect to the main jobs page
             return redirect("jobs:index")
+        else:
+            # create login failure message
+            messages.error(request, 'Invalid username or password. Please try again.')
     form = AuthenticationForm()
     return render(request, "users/login.html", {"form": form})
         
