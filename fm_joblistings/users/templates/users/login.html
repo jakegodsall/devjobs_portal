@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
+{% if messages %}
+  <ul class="flex flex-col w-full bg-white p-[1rem] items-center">
+    {% for message in messages %}
+    <li class="text-[1.6rem] text-red-500 font-bold ">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
 <div class="flex flex-col items-center mt-[5rem]">
-  {% if messages %}
-    <ul>
-      {% for message in messages %}
-        <li>{{ message }}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
   <form class="bg-white p-[3rem] flex flex-col gap-[2.5rem] w-[90%] max-w-[400px] rounded-[0.8rem] shadow-lg" method="POST">
     {% csrf_token %}
     {% include 'partials/_form_floating_input.html' with type="text" name="username" id="username" placeholder="Username" value=form.username.value|default_if_none:'' %}
