@@ -33,6 +33,7 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
+    messages.success(request, 'You have logged out')
     return redirect("jobs:index")
 
 def register_user(request):
