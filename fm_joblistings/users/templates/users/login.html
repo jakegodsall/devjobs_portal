@@ -12,7 +12,7 @@
     {% csrf_token %}
     {% include 'partials/_form_floating_input.html' with type="text" name="username" id="username" placeholder="Username" value=form.username.value|default_if_none:'' %}
     {% include 'partials/_form_floating_input.html' with type="password" name="password" id="password" placeholder="Password" value=form.password.value|default_if_none:'' %}
-    <input class="text-[1.6rem]" type="submit" value="Login" />
+    {% include 'partials/_submit_button.html' with value="Login" %}
   </form>
 </div>
 {% endblock %}
