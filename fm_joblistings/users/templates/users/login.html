@@ -8,7 +8,7 @@
       {% endfor %}
     </ul>
   {% endif %}
-  <form class="bg-white p-[3rem] flex flex-col gap-[2rem] w-[90%] max-w-[400px] rounded-[0.8rem] shadow-lg" method="POST">
+  <form class="bg-white p-[3rem] flex flex-col gap-[2.5rem] w-[90%] max-w-[400px] rounded-[0.8rem] shadow-lg" method="POST">
     {% csrf_token %}
     {% include 'partials/_form_floating_input.html' with type="text" name="username" id="username" placeholder="Username" value=form.username.value|default_if_none:'' %}
     {% include 'partials/_form_floating_input.html' with type="password" name="password" id="password" placeholder="Password" value=form.password.value|default_if_none:'' %}
