@@ -805,6 +805,9 @@ video {
 .text-\[2rem\] {
   font-size: 2rem;
 }
+.text-\[1\.2rem\] {
+  font-size: 1.2rem;
+}
 .font-bold {
   font-weight: 700;
 }
