@@ -95,6 +95,9 @@ def profile(request):
     user_profile = request.user
     user_type = user_profile.user_type.lower()
     print("USER TYPE: ", user_type)
+    if user_profile.is_superuser:
+        return render(request, "users/superuser_profile.html", {
+        })
     if user_type == "client":
         client_profile = get_object_or_404(Client, profile=user_profile)
         print(client_profile)
