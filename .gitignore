@@ -9,7 +9,11 @@ db.sqlite3
 
 # Project files
 assets/
-bootstrap_data/ 
+bootstrap_data/
+.env
 
 # Node
 node_modules/
+
+# macOS
+.DS_Store

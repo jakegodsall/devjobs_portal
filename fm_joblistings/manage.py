@@ -2,11 +2,17 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from fm_joblistings.settings import base_settings
 
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fm_joblistings.settings')
+
+    if base_settings.DEBUG:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fm_joblistings.settings.dev_settings')
+    else:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fm_joblistings.settings.prod_settings')
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
