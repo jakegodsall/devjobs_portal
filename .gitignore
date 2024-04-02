@@ -4,6 +4,9 @@ venv/
 __pycache__/
 media/
 
+# PyCharm
+.idea
+
 # sqlite
 db.sqlite3
 
