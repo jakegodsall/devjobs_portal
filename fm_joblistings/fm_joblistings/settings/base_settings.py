@@ -56,7 +56,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'fm_joblistings.wsgi.application'
 
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -72,6 +71,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 LANGUAGE_CODE = 'en-us'
 
@@ -87,7 +92,6 @@ STATICFILES_DIRS = [
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = 'media/'

@@ -1,23 +1,24 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      {% block title %}
-        Joblistings (Frontend Mentor)
-      {% endblock %}
+      {% block title %} Joblistings (Frontend Mentor) {% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   </head>
   <body>
     <div class="relative">
       {% include 'partials/_header.html' %}
-      <img class="bg-[#5ca5a5] w-screen" src="{% static 'images/bg-header-mobile.svg' %}" alt="background" />
+      <img
+        class="bg-[#5ca5a5] w-screen"
+        src="{% static 'images/bg-header-mobile.svg' %}"
+        alt="background"
+      />
     </div>
     {% block content %}
-
     {% endblock %}
   </body>
 </html>

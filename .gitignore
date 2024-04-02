@@ -10,7 +10,7 @@ db.sqlite3
 # Project files
 assets/
 bootstrap_data/
-.env
+fm_joblistings/.env
 
 # Node
 node_modules/

@@ -10,6 +10,7 @@ from django.contrib import messages
 from .models import UserProfile, Company, Client
 from .forms import UserProfileForm, ClientForm, CompanyForm
 
+
 def login_user(request):
     if request.method == "POST":
         # get the user credentials from the form submission
@@ -35,6 +36,7 @@ def logout_user(request):
     logout(request)
     messages.success(request, 'You have logged out')
     return redirect("jobs:index")
+
 
 def register_user(request):
     if request.method == "POST":
@@ -76,6 +78,7 @@ def register_company(request, user_id):
     company_form = CompanyForm()
     return render(request, "users/register_company.html", {"company_form": company_form})
 
+
 def register_client(request, user_id):
     user = get_object_or_404(UserProfile, pk=user_id)
     if request.method == "POST":
@@ -89,6 +92,7 @@ def register_client(request, user_id):
             return render(request, "users/register_client.html", {"client_form": client_form})
     client_form = ClientForm()
     return render(request, "users/register_client.html", { "client_form":  client_form})
+
 
 @login_required
 def profile(request):

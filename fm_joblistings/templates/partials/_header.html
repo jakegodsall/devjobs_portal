@@ -1,5 +1,9 @@
 <header class="flex justify-between absolute top-0 mt-[2rem] w-full px-[2rem]">
-  <a href="{% url 'jobs:index' %}"><h1 class="text-[1.4rem] text-white font-bold tracking-wider">Joblistings</h1></a>
+  <a href="{% url 'jobs:index' %}"
+    ><h1 class="text-[1.4rem] text-white font-bold tracking-wider">
+      Joblistings
+    </h1></a
+  >
   {% if user.is_authenticated %}
     {% include './_navigation_authenticated.html' %}
   {% else %}

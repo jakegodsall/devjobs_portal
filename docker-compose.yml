@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: './fm_joblistings'
+      dockerfile: Dockerfile
+    platform: linux/arm64
+    command: python3 manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./fm_joblistings:/app
+    container_name: joblisting_app
