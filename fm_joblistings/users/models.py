@@ -13,7 +13,8 @@ from django.contrib.auth.models import User
 
 #     Attributes:
 #         user (User): A one-to-one link to Django's built-in User model.
-#         user_type (CharField): The type of user, which can be either a Client or a Company, as defined by the Type enum.
+#         user_type (CharField): The type of user, which can be either a Client or a Company,
+#         as defined by the Type enum.
 #     """
 
 #     class Type(models.TextChoices):
@@ -34,8 +35,8 @@ class UserProfile(auth_models.AbstractUser):
         
     user_type = models.CharField(max_length=10, choices=Type.choices)
 
-
     USERNAME_FIELD = "username"
+
 
 class Client(models.Model):
     """
@@ -57,7 +58,6 @@ class Client(models.Model):
     last_name = models.CharField(max_length=100)
     avatar = models.ImageField()
     cv = models.FileField()
-
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -81,6 +81,7 @@ class Company(models.Model):
     company_name = models.CharField(max_length=100)
     logo = models.FileField()
     location = models.CharField(max_length=100)
+    description = models.TextField(max_length=500)
 
     def __str__(self):
         return self.company_name

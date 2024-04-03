@@ -11,6 +11,7 @@ class Language(models.Model):
     def __str__(self):
         return self.name
 
+
 class Tool(models.Model):
     name = models.CharField(max_length=100)
 
@@ -32,19 +33,23 @@ class Job(models.Model):
     class Contract(models.TextChoices):
         PART_TIME = "PT", "Part Time"
         FULL_TIME = "FT", "Full Time"
-    
-    position = models.CharField(max_length=100)
+
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
-    role = models.CharField(max_length=2, choices=Role.choices)    
+    position = models.CharField(max_length=100)
+    role = models.CharField(max_length=2, choices=Role.choices)
     level = models.CharField(max_length=1, choices=Level.choices, default=Level.JUNIOR)
     contract = models.CharField(max_length=2, choices=Contract.choices, default=Contract.FULL_TIME)
     posted_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     is_featured = models.BooleanField(default=False)
     location = models.CharField(max_length=100)
-    salary = models.PositiveBigIntegerField()
+    salary = models.CharField(max_length=100)
     languages = models.ManyToManyField(Language, blank=True)
     tools = models.ManyToManyField(Tool, blank=True)
+    description = models.TextField(max_length=500)
+    qualifications = models.TextField(max_length=500)
+    benefits = models.TextField(max_length=500)
+    growth = models.TextField(max_length=500)
 
     def __str__(self):
         return f"{self.position} ({self.company})"
