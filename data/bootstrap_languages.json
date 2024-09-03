@@ -1,54 +1,54 @@
 [
     {
         "name": "Python",
-        "svg_icon": "job_portal/svg_icons/python.svg"
+        "svg_icon": "job_portal/svg_icons/languages/python.svg"
     },
     {
         "name": "JavaScript",
-        "svg_icon": "job_portal/svg_icons/javascript.svg"
+        "svg_icon": "job_portal/svg_icons/languages/javascript.svg"
     },
     {
         "name": "Java",
-        "svg_icon": "job_portal/svg_icons/java.svg"
+        "svg_icon": "job_portal/svg_icons/languages/java.svg"
     },
     {
         "name": "C++",
-        "svg_icon": "job_portal/svg_icons/cpp.svg"
+        "svg_icon": "job_portal/svg_icons/languages/cpp.svg"
     },
     {
         "name": "C#",
-        "svg_icon": "job_portal/svg_icons/csharp.svg"
+        "svg_icon": "job_portal/svg_icons/languages/csharp.svg"
     },
     {
         "name": "Go",
-        "svg_icon": "job_portal/svg_icons/go.svg"
+        "svg_icon": "job_portal/svg_icons/languages/go.svg"
     },
     {
         "name": "Rust",
-        "svg_icon": "job_portal/svg_icons/rust.svg"
+        "svg_icon": "job_portal/svg_icons/languages/rust.svg"
     },
     {
         "name": "PHP",
-        "svg_icon": "job_portal/svg_icons/php.svg"
+        "svg_icon": "job_portal/svg_icons/languages/php.svg"
     },
     {
         "name": "Swift",
-        "svg_icon": "job_portal/svg_icons/swift.svg"
+        "svg_icon": "job_portal/svg_icons/languages/swift.svg"
     },
     {
         "name": "Kotlin",
-        "svg_icon": "job_portal/svg_icons/kotlin.svg"
+        "svg_icon": "job_portal/svg_icons/languages/kotlin.svg"
     },
     {
         "name": "TypeScript",
-        "svg_icon": "job_portal/svg_icons/typescript.svg"
+        "svg_icon": "job_portal/svg_icons/languages/typescript.svg"
     },
     {
         "name": "HTML",
-        "svg_icon": "job_portal/svg_icons/html.svg"
+        "svg_icon": "job_portal/svg_icons/languages/html.svg"
     },
     {
         "name": "CSS",
-        "svg_icon": "job_portal/svg_icons/css.svg"
+        "svg_icon": "job_portal/svg_icons/languages/css.svg"
     }
 ]

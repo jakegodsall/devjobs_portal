@@ -1,0 +1,26 @@
+[
+  {
+    "name": "React",
+    "svg_icon": "job_portal/svg_icons/tools/react.svg"
+  },
+  {
+    "name": "Git",
+    "svg_icon": "job_portal/svg_icons/tools/git.svg"
+  },
+  {
+    "name": "GitHub Actions",
+    "svg_icon": "job_portal/svg_icons/tools/github-actions.svg"
+  },
+  {
+    "name": "Docker",
+    "svg_icon": "job_portal/svg_icons/tools/docker.svg"
+  },
+  {
+    "name": "Node.js",
+    "svg_icon": "job_portal/svg_icons/tools/node.svg"
+  },
+  {
+    "name": "Django",
+    "svg_icon": "job_portal/svg_icons/tools/django.svg"
+  }
+]
