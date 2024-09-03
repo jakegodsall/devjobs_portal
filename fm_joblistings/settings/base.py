@@ -1,15 +1,9 @@
 import os
 from pathlib import Path
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
-
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -88,7 +82,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    BASE_DIR / 'joblisting/static'
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

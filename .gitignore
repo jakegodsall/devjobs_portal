@@ -13,7 +13,7 @@ db.sqlite3
 # Project files
 assets/
 bootstrap_data/
-fm_joblistings/.env
+.env
 
 # Node
 node_modules/

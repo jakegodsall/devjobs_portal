@@ -2,16 +2,19 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from fm_joblistings.settings import base_settings
-
 
 def main():
     """Run administrative tasks."""
 
-    if base_settings.DEBUG:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fm_joblistings.settings.dev_settings')
+    # Determine the environment
+    env = os.getenv('DJANGO_ENV', 'development')  # Default to development
+    # Set the settings module
+    if env == 'development':
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fm_joblistings.settings.development')
+    elif env == 'production':
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fm_joblistings.settings.production')
     else:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fm_joblistings.settings.prod_settings')
+        raise ValueError(f"Unknown DJANGO_ENV: {env}")
 
     try:
         from django.core.management import execute_from_command_line

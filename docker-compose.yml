@@ -2,13 +2,15 @@ version: '3'
 
 services:
   web:
-    build:
-      context: './fm_joblistings'
-      dockerfile: Dockerfile
-    platform: linux/arm64
+    build: .
     command: python3 manage.py runserver 0.0.0.0:8000
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=${SECRET_KEY}
+      - DJANGO_SETTINGS_MODULE=fm_joblistings.settings.development
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
     ports:
       - "8000:8000"
     volumes:
-      - ./fm_joblistings:/app
+      - .:/code
     container_name: joblisting_app

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "postcss css/tailwind.css -o ../static/css/styles.css --watch",
-    "build": "postcss css/tailwind.css -o ../static/css/styles.css"
+    "dev": "postcss css/tailwind.css -o ../joblisting/static/css/styles.css --watch",
+    "build": "postcss css/tailwind.css -o ../joblisting/static/css/styles.css"
   },
   "keywords": [],
   "author": "",

@@ -1,8 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'joblisting/base.html' %}
 {% block content %}
 {% if user.user_type|lower == 'company' or user.is_superuser %}
   <div class="flex flex-col items-center bg-white p-[2.4rem]">
-    {% include 'partials/_company_banner.html' %}
+    {% include 'joblisting/partials/_company_banner.html' %}
   </div>
 {% endif %}
 {% if messages %}

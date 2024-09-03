@@ -4,7 +4,7 @@ from django.core.management.base import BaseCommand
 
 from joblisting.models import Company, Job
 
-WORKING_DIR = Path('.')
+WORKING_DIR = Path('')
 
 class Command(BaseCommand):
     help = 'Bootstrap company data from JSON to the database'
