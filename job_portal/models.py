@@ -7,6 +7,10 @@ from users.models import Company
 
 class Language(models.Model):
     name = models.CharField(max_length=100)
+    svg_icon = models.FileField(upload_to='job_portal/svg_icons/', blank=True)
+
+    created_date = models.DateTimeField(auto_now_add=True)
+    update_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
