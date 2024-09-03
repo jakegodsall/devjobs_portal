@@ -1,6 +1,8 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 <form method="POST" enctype="multipart/form-data">
-  {% csrf_token %} {{ company_form }} {% include 'partials/_submit_button.html'
-  with value="Create profile" %}
+    {% csrf_token %}
+    {{ company_form }}
+    {% include 'partials/_submit_button.html' with value="Create profile" %}
 </form>
 {% endblock %}
