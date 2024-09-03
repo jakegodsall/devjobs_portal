@@ -14,8 +14,8 @@
 {% endif %}
 <section>
   <ul class="flex flex-col gap-[4rem] items-center mt-[5rem]">
-    {% for job_listing in job_listings %}
-    <li class="w-4/5">{% include "job_portal/partials/_job_item.html" with job_listing=job_listing %}</li>
+    {% for job in jobs %}
+    <li class="w-4/5">{% include "job_portal/partials/_job_item.html" with job=job %}</li>
     {% endfor %}
   </ul>
 </section>

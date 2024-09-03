@@ -7,11 +7,11 @@ from .forms import JobForm
 
 # Create your views here.
 def index(request):
-    joblistings = Job.objects.all().prefetch_related('languages').prefetch_related('tools')
+    jobs = Job.objects.all()
     return render(
         request,
         'job_portal/index.html',
-        {"joblistings": joblistings}
+        {"jobs": jobs}
     )
 
 class CreateJobView(View):
