@@ -1,0 +1,18 @@
+[
+    {
+        "username": "client1",
+        "password": "password123",
+        "first_name": "John",
+        "last_name": "Doe",
+        "avatar": "path/to/avatar1.jpg",
+        "cv": "path/to/cv1.pdf"
+    },
+    {
+        "username": "client2",
+        "password": "password456",
+        "first_name": "Jane",
+        "last_name": "Smith",
+        "avatar": "path/to/avatar2.jpg",
+        "cv": "path/to/cv2.pdf"
+    }
+]
