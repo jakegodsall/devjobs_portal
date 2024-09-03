@@ -10,13 +10,13 @@ def index(request):
     joblistings = Job.objects.all().prefetch_related('languages').prefetch_related('tools')
     return render(
         request,
-        'joblisting/index.html',
+        'job_portal/index.html',
         {"joblistings": joblistings}
     )
 
 class CreateJobView(View):
     form_class = JobForm
-    template = "joblisting/create.html"
+    template = "job_portal/create.html"
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()

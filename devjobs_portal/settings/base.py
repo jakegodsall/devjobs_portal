@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
@@ -14,7 +14,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'joblisting',
+    'job_portal',
     'users'
 ]
 
@@ -28,7 +28,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'fm_joblistings.urls'
+ROOT_URLCONF = 'devjobs_portal.urls'
 
 TEMPLATES = [
     {
@@ -48,7 +48,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'fm_joblistings.wsgi.application'
+WSGI_APPLICATION = 'devjobs_portal.wsgi.application'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -80,9 +80,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Static files
+
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'joblisting/static'
+    BASE_DIR / 'static'
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

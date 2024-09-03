@@ -10,9 +10,9 @@ def main():
     env = os.getenv('DJANGO_ENV', 'development')  # Default to development
     # Set the settings module
     if env == 'development':
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fm_joblistings.settings.development')
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'devjobs_portal.settings.development')
     elif env == 'production':
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fm_joblistings.settings.production')
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'devjobs_portal.settings.production')
     else:
         raise ValueError(f"Unknown DJANGO_ENV: {env}")
 

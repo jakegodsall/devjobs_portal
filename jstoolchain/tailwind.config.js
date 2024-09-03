@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "../templates/**/*.html",
-    "../joblisting/templates/**/*.html",
+    "../job_portal/templates/**/*.html",
     "../users/templates/**/*.html",
   ],
   theme: {

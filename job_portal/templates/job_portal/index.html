@@ -1,8 +1,8 @@
-{% extends 'joblisting/base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 {% if user.user_type|lower == 'company' or user.is_superuser %}
   <div class="flex flex-col items-center bg-white p-[2.4rem]">
-    {% include 'joblisting/partials/_company_banner.html' %}
+    {% include 'job_portal/partials/_company_banner.html' %}
   </div>
 {% endif %}
 {% if messages %}
@@ -15,7 +15,7 @@
 <section>
   <ul class="flex flex-col gap-[4rem] items-center mt-[5rem]">
     {% for job_listing in job_listings %}
-    <li class="w-4/5">{% include "joblisting/partials/_job_item.html" with job_listing=job_listing %}</li>
+    <li class="w-4/5">{% include "job_portal/partials/_job_item.html" with job_listing=job_listing %}</li>
     {% endfor %}
   </ul>
 </section>

@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('joblisting', '0001_initial'),
+        ('job_portal', '0001_initial'),
     ]
 
     operations = [

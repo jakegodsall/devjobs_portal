@@ -7,10 +7,10 @@ services:
     environment:
       - DEBUG=True
       - SECRET_KEY=${SECRET_KEY}
-      - DJANGO_SETTINGS_MODULE=fm_joblistings.settings.development
+      - DJANGO_SETTINGS_MODULE=devjobs_portal.settings.development
       - ALLOWED_HOSTS=${ALLOWED_HOSTS}
     ports:
       - "8000:8000"
     volumes:
       - .:/code
-    container_name: joblisting_app
+    container_name: devjobs_portal

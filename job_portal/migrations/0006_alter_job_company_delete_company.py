@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('joblisting', '0005_alter_company_options'),
+        ('job_portal', '0005_alter_company_options'),
         ('users', '0003_alter_userprofile_options_alter_userprofile_managers_and_more'),
     ]
 

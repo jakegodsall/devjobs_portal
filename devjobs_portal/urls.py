@@ -1,5 +1,5 @@
 """
-URL configuration for fm_joblistings project.
+URL configuration for devjobs_portal project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('joblisting.urls')),
+    path('', include('job_portal.urls')),
     path("users/", include("users.urls"))
 ]

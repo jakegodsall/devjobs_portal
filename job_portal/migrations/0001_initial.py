@@ -47,9 +47,9 @@ class Migration(migrations.Migration):
                 ('is_new', models.BooleanField(default=True)),
                 ('location', models.CharField(max_length=100)),
                 ('salary', models.PositiveBigIntegerField()),
-                ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='joblisting.company')),
-                ('languages', models.ManyToManyField(to='joblisting.language')),
-                ('tools', models.ManyToManyField(to='joblisting.tool')),
+                ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='job_portal.company')),
+                ('languages', models.ManyToManyField(to='job_portal.language')),
+                ('tools', models.ManyToManyField(to='job_portal.tool')),
             ],
         ),
     ]

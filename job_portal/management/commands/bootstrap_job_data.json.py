@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from django.core.management.base import BaseCommand
 
-from joblisting.models import Company, Job
+from job_portal.models import Company, Job
 
 WORKING_DIR = Path('')
 

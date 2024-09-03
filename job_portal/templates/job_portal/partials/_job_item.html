@@ -36,12 +36,12 @@
     <li>{{ joblisting.location }}</li>
   </ul>
   <ul class="flex flex-wrap gap-[1.6rem] mt-[1.6rem]">
-    {% include 'joblisting/partials/_skill_badge.html' with skill=joblisting.get_role_display %}
-    {% include 'joblisting/partials/_skill_badge.html' with skill=joblisting.get_level_display %}
+    {% include 'job_portal/partials/_skill_badge.html' with skill=joblisting.get_role_display %}
+    {% include 'job_portal/partials/_skill_badge.html' with skill=joblisting.get_level_display %}
     {% for language in joblisting.languages.all %}
-    {% include 'joblisting/partials/_skill_badge.html' with skill=language %}
+    {% include 'job_portal/partials/_skill_badge.html' with skill=language %}
     {% endfor %} {% for tool in joblisting.tools.all %}
-    {% include 'joblisting/partials/_skill_badge.html' with skill=tool %}
+    {% include 'job_portal/partials/_skill_badge.html' with skill=tool %}
     {% endfor %}
   </ul>
 </div>
