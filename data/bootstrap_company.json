@@ -1,0 +1,92 @@
+[
+  {
+      "username": "photosnap_company",
+      "password": "j{&-K~z/(Bt",
+      "company_name": "Photosnap",
+      "logo": "./images/photosnap.svg",
+      "location": "USA Only",
+      "description": "Photosnap company description.",
+      "email": "info@photosnap.com"
+  },
+  {
+      "username": "manage_company",
+      "password": "gz=0p49cEs,m",
+      "company_name": "Manage",
+      "logo": "./images/manage.svg",
+      "location": "Remote",
+      "description": "Manage company description.",
+      "email": "info@manage.com"
+  },
+  {
+      "username": "account_company",
+      "password": "$W4k9{x\"G.^J",
+      "company_name": "Account",
+      "logo": "./images/account.svg",
+      "location": "USA Only",
+      "description": "Account company description.",
+      "email": "info@account.com"
+  },
+  {
+      "username": "myhome_company",
+      "password": "]$'5|/ps;I^)",
+      "company_name": "MyHome",
+      "logo": "./images/myhome.svg",
+      "location": "USA Only",
+      "description": "MyHome company description.",
+      "email": "info@myhome.com"
+  },
+  {
+      "username": "loopstudios_company",
+      "password": "\\D]d]}D~g2T",
+      "company_name": "Loop Studios",
+      "logo": "./images/loop-studios.svg",
+      "location": "Worldwide",
+      "description": "Loop Studios company description.",
+      "email": "info@loopstudios.com"
+  },
+  {
+      "username": "faceit_company",
+      "password": "s\\iz=}hTTaA5",
+      "company_name": "FaceIt",
+      "logo": "./images/faceit.svg",
+      "location": "UK Only",
+      "description": "FaceIt company description.",
+      "email": "info@faceit.com"
+  },
+  {
+      "username": "shortly_company",
+      "password": "W]'S;rcx+GOY",
+      "company_name": "Shortly",
+      "logo": "./images/shortly.svg",
+      "location": "Worldwide",
+      "description": "Shortly company description.",
+      "email": "info@shortly.com"
+  },
+  {
+      "username": "insure_company",
+      "password": "FaiF>vcjrwE:",
+      "company_name": "Insure",
+      "logo": "./images/insure.svg",
+      "location": "USA Only",
+      "description": "Insure company description.",
+      "email": "info@insure.com"
+  },
+  {
+      "username": "eyecamco_company",
+      "password": "BQs50E&{^Fw#",
+      "company_name": "Eyecam Co.",
+      "logo": "./images/eyecam-co.svg",
+      "location": "Worldwide",
+      "description": "Eyecam Co. company description.",
+      "email": "info@eyecamco.com"
+  },
+  {
+      "username": "theairfiltercompany_company",
+      "password": "*7J[|Zum!HR\\",
+      "company_name": "The Air Filter Company",
+      "logo": "./images/the-air-filter-company.svg",
+      "location": "Worldwide",
+      "description": "The Air Filter Company description.",
+      "email": "info@theairfiltercompany.com"
+  }
+]
