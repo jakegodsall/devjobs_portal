@@ -1,0 +1,50 @@
+[
+    {
+        "company": "Photosnap",
+        "position": "Frontend Developer",
+        "role": "FE",
+        "level": "J",
+        "contract": "FT",
+        "location": "USA Only",
+        "salary": "$70,000 - $90,000",
+        "languages": ["JavaScript", "HTML", "CSS"],
+        "tools": ["React", "Webpack"],
+        "is_featured": true,
+        "description": "Develop beautiful and responsive user interfaces.",
+        "qualifications": "1+ years of experience in frontend development.",
+        "benefits": "Health insurance, 401(k).",
+        "growth": "Opportunities for growth and learning."
+    },
+    {
+        "company": "Manage",
+        "position": "Fullstack Developer",
+        "role": "FS",
+        "level": "M",
+        "contract": "FT",
+        "location": "Remote",
+        "salary": "$90,000 - $120,000",
+        "languages": ["JavaScript", "Python"],
+        "tools": ["Django", "React"],
+        "is_featured": false,
+        "description": "Work on both frontend and backend components.",
+        "qualifications": "3+ years of experience in fullstack development.",
+        "benefits": "Remote work, health insurance.",
+        "growth": "Career advancement opportunities."
+    },
+    {
+        "company": "Account",
+        "position": "Backend Developer",
+        "role": "BE",
+        "level": "S",
+        "contract": "FT",
+        "location": "USA Only",
+        "salary": "$110,000 - $140,000",
+        "languages": ["Python", "Java"],
+        "tools": ["Django", "Spring"],
+        "is_featured": true,
+        "description": "Build scalable and efficient backend services.",
+        "qualifications": "5+ years of experience in backend development.",
+        "benefits": "Health insurance, stock options.",
+        "growth": "Leadership opportunities."
+    }
+]
