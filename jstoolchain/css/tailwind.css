@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
-
-root {
-  --main-text: #2b3939;
-  --secondary-text: #5ca5a5;
-  --main-background: #2b3939;
+:root {
+  --main-text: #1D1C1C;
+  --secondary-text: #fff;
+  --form-text: #CFCFCF;
+  --primary-purple: #6100FF;
+  --secondary-purple: #ECE8FF;
 }
 
 *,
@@ -18,9 +20,9 @@ root {
 
 html {
   font-size: 62.5%;
-  font-family: "League Spartan", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  background-color: #effafa;
+  background-color: var(--secondary-purple);
 }

@@ -1,12 +1,5 @@
-<header class="flex justify-between absolute top-0 mt-[2rem] w-full px-[2rem]">
-  <a href="{% url 'jobs:index' %}"
-    ><h1 class="text-[1.4rem] text-white font-bold tracking-wider">
-      Joblistings
-    </h1></a
-  >
-  {% if user.is_authenticated %}
-    {% include './_navigation_authenticated.html' %}
-  {% else %}
-    {% include './_navigation_unauthenticated.html' %}
-  {% endif %}
+<header class="flex justify-between top-0 my-[2.5rem] w-full px-[2rem]">
+  <a href="{% url 'jobs:index' %}">
+      <h1 class="text-[1.4rem] text-main-text font-epilogue tracking-wider">DevJob Portal</h1>
+  </a>
 </header>

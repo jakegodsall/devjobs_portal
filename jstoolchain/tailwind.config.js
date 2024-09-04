@@ -10,8 +10,13 @@ module.exports = {
       colors: {
         "main-text": "var(--main-text)",
         "secondary-text": "var(--secondary-text)",
-        "main-background": "var(--main-background)",
+        "form-text": "var(--form-text)",
+        "primary-purple": "var(--primary-purple)",
+        "secondary-purple": "var(--secondary-purple)"
       },
+      fontFamily: {
+        epilogue: ["Epilogue", "system-ui"]
+      }
     },
   },
   plugins: [],
