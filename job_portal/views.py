@@ -7,11 +7,13 @@ from .forms import JobForm
 
 # Create your views here.
 def index(request):
-    jobs = Job.objects.all()
+    # Get 5 random featured jobs
+    featured_jobs = Job.objects.filter(is_featured=True).order_by('?')[:5]
+
     return render(
         request,
         'job_portal/index.html',
-        {"jobs": jobs}
+        {"featured_jobs": featured_jobs}
     )
 
 class CreateJobView(View):

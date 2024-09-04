@@ -1,0 +1,8 @@
+<section class="pt-[6.3rem] px-[2rem]">
+    <h2 class="text-main-text font-epilogue text-[3rem] font-extrabold mb-[4.8rem]">Featured Jobs</h2>
+    <ul class="flex flex-col items-center gap-[2.2rem]">
+        {% for job in featured_jobs %}
+            {% include 'job_portal/partials/featured-jobs/_job-item.html' %}
+        {% endfor %}
+    </ul>
+</section>

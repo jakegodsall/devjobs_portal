@@ -3,6 +3,7 @@
 {% block content %}
     {%  include 'job_portal/partials/hero/_hero.html' %}
     {%  include 'job_portal/partials/signup-client/_signup-client.html' %}
+    {%  include 'job_portal/partials/featured-jobs/_featured-jobs.html' %}
 {#{% if user.user_type|lower == 'company' or user.is_superuser %}#}
 {#  <div class="flex flex-col items-center bg-white p-[2.4rem]">#}
 {#    {% include 'job_portal/partials/_company_banner.html' %}#}
@@ -18,7 +19,7 @@
 {#<section>#}
 {#  <ul class="flex flex-col gap-[4rem] items-center mt-[5rem]">#}
 {#    {% for job in jobs %}#}
-{#    <li class="w-4/5">{% include "job_portal/partials/_job_item.html" with job=job %}</li>#}
+{#    <li class="w-4/5">{% include "job_portal/partials/_job-item.html" with job=job %}</li>#}
 {#    {% endfor %}#}
 {#  </ul>#}
 {#</section>#}
