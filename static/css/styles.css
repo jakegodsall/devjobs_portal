@@ -580,6 +580,15 @@ video {
 .mb-\[2\.8rem\]{
   margin-bottom: 2.8rem;
 }
+.mb-\[2\.6rem\]{
+  margin-bottom: 2.6rem;
+}
+.mb-\[2\.2rem\]{
+  margin-bottom: 2.2rem;
+}
+.mt-\[2\.4rem\]{
+  margin-top: 2.4rem;
+}
 .block{
   display: block;
 }
@@ -682,6 +691,9 @@ video {
 }
 .gap-\[2\.2rem\]{
   gap: 2.2rem;
+}
+.gap-\[2\.6rem\]{
+  gap: 2.6rem;
 }
 .rounded-2xl{
   border-radius: 1rem;
@@ -846,6 +858,10 @@ video {
 .py-\[0\.6rem\]{
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
+}
+.py-\[4rem\]{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 .pb-6{
   padding-bottom: 1.5rem;

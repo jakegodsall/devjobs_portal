@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   </head>
   <body>
-    {% include 'partials/_header.html' %}
+    {% include 'partials/header/_header.html' %}
     {% block content %}{% endblock %}
+    {% include 'partials/footer/_footer.html' %}
   </body>
 </html>
