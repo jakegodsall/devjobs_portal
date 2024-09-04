@@ -574,6 +574,12 @@ video {
 .mb-\[0\.7rem\]{
   margin-bottom: 0.7rem;
 }
+.mb-\[4rem\]{
+  margin-bottom: 4rem;
+}
+.mb-\[2\.8rem\]{
+  margin-bottom: 2.8rem;
+}
 .block{
   display: block;
 }
