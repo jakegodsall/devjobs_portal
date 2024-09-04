@@ -559,6 +559,12 @@ video {
 .mb-\[4\.4rem\]{
   margin-bottom: 4.4rem;
 }
+.mb-\[4\.5rem\]{
+  margin-bottom: 4.5rem;
+}
+.mb-\[5rem\]{
+  margin-bottom: 5rem;
+}
 .block{
   display: block;
 }
@@ -744,6 +750,9 @@ video {
 .bg-primary-purple{
   background-color: var(--primary-purple);
 }
+.bg-secondary-purple{
+  background-color: var(--secondary-purple);
+}
 .p-\[1rem\]{
   padding: 1rem;
 }
@@ -796,6 +805,18 @@ video {
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
 }
+.px-\[\]{
+  padding-left: ;
+  padding-right: ;
+}
+.px-\[1\.4rem\]{
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+}
+.py-\[1\.4rem\]{
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+}
 .pb-6{
   padding-bottom: 1.5rem;
 }
@@ -816,6 +837,12 @@ video {
 }
 .pb-\[6rem\]{
   padding-bottom: 6rem;
+}
+.pt-\[6\.3rem\]{
+  padding-top: 6.3rem;
+}
+.pb-\[5rem\]{
+  padding-bottom: 5rem;
 }
 .text-center{
   text-align: center;
@@ -854,6 +881,9 @@ video {
 }
 .text-\[2\.4rem\]{
   font-size: 2.4rem;
+}
+.text-\[3\.6rem\]{
+  font-size: 3.6rem;
 }
 .font-bold{
   font-weight: 700;
@@ -912,6 +942,9 @@ video {
 }
 .text-secondary-text{
   color: var(--secondary-text);
+}
+.text-primary-purple{
+  color: var(--primary-purple);
 }
 .shadow-lg{
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
