@@ -9,8 +9,26 @@ services:
       - SECRET_KEY=${SECRET_KEY}
       - DJANGO_SETTINGS_MODULE=devjobs_portal.settings.development
       - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+      - DATABASE_NAME=${POSTGRES_DB}
+      - DATABASE_USER=${POSTGRES_USER}
+      - DATABASE_PASSWORD=${POSTGRES_PASSWORD}
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
     ports:
       - "8000:8000"
     volumes:
       - .:/code
     container_name: devjobs_portal
+
+  db:
+      image: postgres:13
+      environment:
+        - POSTGRES_DB=${POSTGRES_DB}
+        - POSTGRES_USER=${POSTGRES_USER}
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+      container_name: postgres_db
+
+volumes:
+  postgres_data:
