@@ -1,5 +1,6 @@
-<header class="flex justify-between top-0 my-[2.5rem] w-full px-[2rem]">
+<header class="flex justify-between items-center top-0 py-[2.5rem] w-full px-[2rem] bg-primary-purple">
   <a href="{% url 'jobs:index' %}">
-      <h1 class="text-[1.4rem] text-main-text font-epilogue tracking-wider">DevJob Portal</h1>
+      <h1 class="text-[1.4rem] text-secondary-text font-epilogue font-bold tracking-wider">DevJob Portal</h1>
   </a>
+    {% include 'partials/hamburger/_hamburger.html' %}
 </header>
