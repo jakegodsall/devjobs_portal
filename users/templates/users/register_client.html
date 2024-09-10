@@ -1,20 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="flex flex-col items-center mt-[5rem]">
-  <form
-    method="POST"
-    class="w-[90%] max-w-[400px] bg-white rounded-[0.8rem] p-[3rem] shadow-lg"
-    novalidate
-    enctype="multipart/form-data"
-  >
-    {% csrf_token %}
-    <div class="flex flex-col gap-[2.5rem] mb-[3rem]">
-        {% include 'partials/_floating_input.html' with type="text" name="first_name" id="first_name" placeholder="First Name" value=client_form.username.value|default_if_none:'' %}
-        {% include 'partials/_floating_input.html' with type="text" name="last_name" id="last_name" placeholder="Last Name" value=client_form.last_name.value|default_if_none:'' %}
-        {% include 'partials/_form_file_upload.html' with label="Profile Picture" id="avatar" %}
-        {% include 'partials/_form_file_upload.html' with label="CV" id="cv" %}
-    </div>
-    {% include 'partials/_submit_button.html' with value="Create Client Profile" %}
-  </form>
+<div class="flex flex-col items-center mt-[5rem] h-[90vh] max-h-[800px] justify-center">
+  {% include 'users/partials/forms/_register-client-form.html' %}
 </div>
 {% endblock %}

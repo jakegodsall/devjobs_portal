@@ -72,6 +72,26 @@ def register_user(request):
     return render(request, "users/register_user.html", context)
 
 
+def register_client(request, user_id):
+    context = {"footer_theme": "dark"}
+
+    user = get_object_or_404(UserProfile, pk=user_id)
+
+    if request.method == "POST":
+        client_form = ClientForm(request.POST, request.FILES)
+        context["client_form"] = client_form
+        if client_form.is_valid():
+            client_profile = client_form.save(commit=False)
+            client_profile.profile = user
+            client_profile.save()
+            return redirect("users:profile")
+        else:
+            return render(request, "users/register_client.html", context)
+    client_form = ClientForm()
+
+    context["client_form"] = client_form
+    return render(request, "users/register_client.html", context)
+
 def register_company(request, user_id):
     user = get_object_or_404(UserProfile, pk=user_id)
     if request.method == "POST":
@@ -88,19 +108,7 @@ def register_company(request, user_id):
     return render(request, "users/register_company.html", {"company_form": company_form})
 
 
-def register_client(request, user_id):
-    user = get_object_or_404(UserProfile, pk=user_id)
-    if request.method == "POST":
-        client_form = ClientForm(request.POST, request.FILES)
-        if client_form.is_valid():
-            client_profile = client_form.save(commit=False)
-            client_profile.profile = user
-            client_profile.save()
-            return redirect("users:profile")
-        else:
-            return render(request, "users/register_client.html", {"client_form": client_form})
-    client_form = ClientForm()
-    return render(request, "users/register_client.html", { "client_form":  client_form})
+
 
 
 @login_required
