@@ -1,1 +1,1 @@
-web: gunicorn portfolio_site.wsgi --log-file -
+web: gunicorn devjobs_portal.wsgi --log-file -
