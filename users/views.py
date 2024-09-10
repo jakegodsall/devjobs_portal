@@ -39,6 +39,8 @@ def logout_user(request):
 
 
 def register_user(request):
+    context = {"footer_theme": "dark"}
+
     if request.method == "POST":
 
         profile_form = UserProfileForm(request.POST)
@@ -55,12 +57,12 @@ def register_user(request):
         else:
             print(profile_form.initial)
             print(profile_form.errors)
-            return render(request, "users/register_user.html", {"profile_form": profile_form})
+            context["profile_form"] = profile_form
+            return render(request, "users/register_user.html", context)
         
     profile_form = UserProfileForm()
-    return render(request, "users/register_user.html", {
-        "profile_form": profile_form
-    })
+    context["profile_form"] = profile_form
+    return render(request, "users/register_user.html", context)
 
 
 def register_company(request, user_id):

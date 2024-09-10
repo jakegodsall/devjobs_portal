@@ -12,6 +12,10 @@
   <body>
     {% include 'partials/header/_header.html' %}
     {% block content %}{% endblock %}
-    {% include 'partials/footer/_footer.html' %}
+    {% if footer_theme == 'dark' %}
+        {% include 'partials/footer/_footer-dark.html' %}
+    {% else %}
+        {% include 'partials/footer/_footer-light.html' %}
+    {% endif %}
   </body>
 </html>

@@ -1083,6 +1083,13 @@ body {
   }
 }
 
+@media (min-width: 768px){
+
+  .md\:flex-row{
+    flex-direction: row;
+  }
+}
+
 @media (prefers-color-scheme: dark){
 
   .dark\:text-gray-400{
