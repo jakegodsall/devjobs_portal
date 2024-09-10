@@ -2,7 +2,7 @@ import os
 import dj_database_url
 from .base import *
 
-DEBUG = False
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 INSTALLED_APPS += [
     'storages'
