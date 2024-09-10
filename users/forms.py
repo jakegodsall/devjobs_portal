@@ -19,12 +19,10 @@ class UserProfileForm(UserCreationForm):
         }
 
 
-
 class ClientForm(forms.ModelForm):
     class Meta:
         model = Client
         fields = ["first_name", "last_name", "avatar", "cv"]
-
 
 
 class CompanyForm(forms.ModelForm):

@@ -30,8 +30,8 @@ from django.contrib.auth.models import User
 
 class UserProfile(auth_models.AbstractUser):
     class Type(models.TextChoices):
-        CLIENT = "Client", "Client"
-        COMPANY = "Company", "Company"
+        CLIENT = "client", "Client"
+        COMPANY = "company", "Company"
         
     user_type = models.CharField(max_length=10, choices=Type.choices)
 

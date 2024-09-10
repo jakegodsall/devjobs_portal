@@ -3,5 +3,5 @@
 <section class="bg-primary-purple text-secondary-text flex flex-col items-center pt-[6.3rem] pb-[5rem] px-[2rem]">
     <h2 class="text-[3.6rem] font-epilogue mb-[4.5rem] text-center font-extrabold">Join Now to Explore Top Job Opportunities</h2>
     <img src="{%  static 'job_portal/svg_icons/index/job.svg' %}" alt="a man checking job applications" class="mb-[5rem]" />
-    <a class="w-full text-center text-[2rem] font-semibold bg-secondary-purple text-primary-purple py-[1.4rem]" href="users/register_user/">Sign Up for Free</a>
+    <a class="w-full text-center text-[2rem] font-semibold bg-secondary-purple text-primary-purple py-[1.4rem]" href="{% url 'users:register_user' %}?user_type=client">Sign Up for Free</a>
 </section>
