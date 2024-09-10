@@ -12,6 +12,7 @@ from .forms import UserProfileForm, ClientForm, CompanyForm
 
 
 def login_user(request):
+    context = {"footer_theme": "dark"}
     if request.method == "POST":
         # get the user credentials from the form submission
         username = request.POST["username"]
@@ -28,9 +29,10 @@ def login_user(request):
         else:
             # create login failure message
             messages.error(request, 'Invalid username or password. Please try again.')
-    form = AuthenticationForm()
-    return render(request, "users/login.html", {"form": form})
-        
+    login_form = AuthenticationForm()
+    context["login_form"] = login_form
+    return render(request, "users/login.html", context)
+
 
 def logout_user(request):
     logout(request)
