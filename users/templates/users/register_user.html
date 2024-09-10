@@ -1,32 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="flex flex-col items-center mt-[5rem]">
-  <form
-    method="POST"
-    class="w-[90%] max-w-[400px] bg-white rounded-[0.8rem] p-[3rem] shadow-lg"
-    novalidate
-  >
-    {% csrf_token %}
-    <div class="flex gap-[2rem] mb-[2rem]">
-      {% for choice in profile_form.user_type.field.choices %}
-      <div class="flex items-center gap-[0.5rem]">
-        <input type="radio" id="user_type_{{forloop.counter}}" name="user_type"  value="{{ choice.0 }}" class="form-radio h-5 w-5 text-blue-600" {% if profile_form.user_type.value == choice.0 %} checked="checked" {% endif %}>
-        <label
-          for="id_choice_field_{{forloop.counter}}"
-          class="text-[1.6rem] text-gray-500"
-          >{{ choice.1 }}</label
-        >
-      </div>
-      {% endfor %}
-    </div>
-    <div class="flex flex-col gap-[2.5rem] mb-[3rem]">
-        {% include 'partials/_form_floating_input.html' with type="text" name="username" id="username" placeholder="Username" value=profile_form.username.value|default_if_none:'' %}
-        {% include 'partials/_form_floating_input.html' with type="email" name="email" id="email" placeholder="Email" value=profile_form.email.value|default_if_none:'' %}
-        {% include 'partials/_form_floating_input.html' with type="password" name="password1" id="password1" placeholder="Password" value=profile_form.password1.value|default_if_none:'' %}
-        {% include 'partials/_form_floating_input.html' with type="password" name="password2" id="password2" placeholder="Confirm Password" value=profile_form.password2.value|default_if_none:'' %}
-    </div>
-    {% include 'partials/_submit_button.html' with value="Create profile" %}
-  </form>
+<div class="flex flex-col items-center mt-[5rem] h-[90vh] justify-center max-h-[800px]">
+    {% include 'users/partials/forms/_register-user-form.html' %}
 </div>
 {% endblock %}
