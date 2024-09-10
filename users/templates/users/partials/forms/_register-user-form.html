@@ -6,24 +6,13 @@
     {% csrf_token %}
     <h1 class="text-[3.2rem] text-main-text font-epilogue font-bold text-center mb-[18px]">Sign Up</h1>
 
-    <div class="flex gap-[2rem] mb-[2rem]">
-      {% for choice in profile_form.user_type.field.choices %}
-      <div class="flex items-center gap-[0.5rem]">
-        <input type="radio" id="user_type_{{forloop.counter}}" name="user_type"  value="{{ choice.0 }}" class="form-radio h-5 w-5 text-blue-600" {% if profile_form.user_type.value == choice.0 %} checked="checked" {% endif %}>
-        <label
-          for="user_type_{{ forloop.counter }}"
-          class="text-[20px] text-form-text"
-          >{{ choice.1 }}</label
-        >
-      </div>
-      {% endfor %}
+    <div class="flex flex-col gap-[2.5rem] mb-[1.5rem]">
+        {% include 'partials/forms/inputs/_floating_input.html' with type="text" name="username" id="username" placeholder="Username" value=profile_form.username.value|default_if_none:'' %}
+        {% include 'partials/forms/inputs/_floating_input.html' with type="email" name="email" id="email" placeholder="Email" value=profile_form.email.value|default_if_none:'' %}
+        {% include 'partials/forms/inputs/_floating_input.html' with type="password" name="password1" id="password1" placeholder="Password" value=profile_form.password1.value|default_if_none:'' %}
+        {% include 'partials/forms/inputs/_floating_input.html' with type="password" name="password2" id="password2" placeholder="Confirm Password" value=profile_form.password2.value|default_if_none:'' %}
     </div>
-    <div class="flex flex-col gap-[2.5rem] mb-[3rem]">
-        {% include 'partials/forms/inputs/_form_floating_input.html' with type="text" name="username" id="username" placeholder="Username" value=profile_form.username.value|default_if_none:'' %}
-        {% include 'partials/forms/inputs/_form_floating_input.html' with type="email" name="email" id="email" placeholder="Email" value=profile_form.email.value|default_if_none:'' %}
-        {% include 'partials/forms/inputs/_form_floating_input.html' with type="password" name="password1" id="password1" placeholder="Password" value=profile_form.password1.value|default_if_none:'' %}
-        {% include 'partials/forms/inputs/_form_floating_input.html' with type="password" name="password2" id="password2" placeholder="Confirm Password" value=profile_form.password2.value|default_if_none:'' %}
-    </div>
+    {% include 'partials/forms/inputs/_radio-section.html' %}
     <button class="block bg-primary-purple text-center text-secondary-text w-full py-[1.2rem] text-[2rem] font-semibold mb-[18px]" type="submit">Create Profile</button>
     <a href="{% url 'users:login' %}" class="text-form-text text-[14px] text-center block">Already a member? Login</a>
   </form>

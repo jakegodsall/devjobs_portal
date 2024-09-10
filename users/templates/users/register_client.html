@@ -9,8 +9,8 @@
   >
     {% csrf_token %}
     <div class="flex flex-col gap-[2.5rem] mb-[3rem]">
-        {% include 'partials/_form_floating_input.html' with type="text" name="first_name" id="first_name" placeholder="First Name" value=client_form.username.value|default_if_none:'' %}
-        {% include 'partials/_form_floating_input.html' with type="text" name="last_name" id="last_name" placeholder="Last Name" value=client_form.last_name.value|default_if_none:'' %}
+        {% include 'partials/_floating_input.html' with type="text" name="first_name" id="first_name" placeholder="First Name" value=client_form.username.value|default_if_none:'' %}
+        {% include 'partials/_floating_input.html' with type="text" name="last_name" id="last_name" placeholder="Last Name" value=client_form.last_name.value|default_if_none:'' %}
         {% include 'partials/_form_file_upload.html' with label="Profile Picture" id="avatar" %}
         {% include 'partials/_form_file_upload.html' with label="CV" id="cv" %}
     </div>

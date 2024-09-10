@@ -1,0 +1,8 @@
+<fieldset class="w-full mb-[1.5rem] flex gap-[0.5rem]">
+      {% for choice in profile_form.user_type.field.choices %}
+          <div class="flex-1">
+            <input class="peer hidden" type="radio" id="user_type_{{ forloop.counter }}" value="{{ choice.0 }}" name="user_type" />
+            <label for="user_type_{{ forloop.counter }}" class="block select-none peer-checked:text-secondary-text peer-checked:bg-primary-purple flex-1 text-[20px] text-center bg-secondary-purple text-primary-purple font-semibold py-2 px-4 cursor-pointer rounded-l">{{ choice.0 }}</label>
+          </div>
+      {% endfor %}
+</fieldset>
