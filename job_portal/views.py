@@ -8,7 +8,7 @@ from .forms import JobForm
 # Create your views here.
 def index(request):
     # Get 5 random featured jobs
-    featured_jobs = Job.objects.filter(is_featured=True).order_by('?')[:4]
+    featured_jobs = Job.objects.filter(is_featured=True).order_by('?')[:8]
 
     return render(
         request,
