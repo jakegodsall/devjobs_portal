@@ -1,8 +1,8 @@
-<section class="pt-[6.3rem] px-[2rem] mb-[4rem]">
+<section class="pt-[6.3rem] px-[2rem] mb-[4rem] w-full max-w-[1440px] bg-secondary-purple">
     <h2 class="text-main-text font-epilogue text-[3rem] font-extrabold mb-[4.8rem]">Featured Jobs</h2>
     <ul class="flex flex-col items-center gap-[2.2rem] mb-[2.8rem]">
         {% for job in featured_jobs %}
-            {% include 'job_portal/partials/featured-jobs/_job-item.html' %}
+            {% include 'job_portal/partials/featured-jobs/_job-item.html' with job=job %}
         {% endfor %}
     </ul>
     <a class="block bg-primary-purple text-center text-secondary-text w-full py-[1.2rem] text-[2rem] font-semibold" href="#">Show all jobs</a>

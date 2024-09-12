@@ -4,5 +4,13 @@
         <p class="font-epilogue text-[1.3rem] font-semibold text-secondary-text bg-primary-purple px-[1rem] py-[0.6rem] rounded-full">Full-Time</p>
     </div>
     <h3 class="text-[1.8rem] text-main-text font-extrabold font-epilogue mb-[0.7rem]">{{ job.position }}</h3>
-    <p class="font-bold text-[1.3rem] text-form-text">{{ job.company }} | {{  job.location }}</p>
+    <p class="font-bold text-[1.3rem] text-form-text mb-[1.5rem]">{{ job.company }} | {{  job.location }}</p>
+    <ul class="flex gap-[8px]">
+        {% for language in job.languages.all %}
+            <img class="h-[25px]" src="{{ language.svg_icon.url }}" alt="{{ language.name }}"/>
+        {% endfor %}
+        {% for tool in job.tools.all %}
+            <img class="h-[25px]" src="{{ tool.svg_icon.url }}" alt="{{ tool.name }}"/>
+        {% endfor %}
+    </ul>
 </div>

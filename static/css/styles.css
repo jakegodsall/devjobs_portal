@@ -603,6 +603,9 @@ video {
 .h-\[90vh\]{
   height: 90vh;
 }
+.h-\[25px\]{
+  height: 25px;
+}
 .max-h-\[800px\]{
   max-height: 800px;
 }
@@ -620,6 +623,9 @@ video {
 }
 .w-full{
   width: 100%;
+}
+.w-\[25px\]{
+  width: 25px;
 }
 .max-w-\[1440px\]{
   max-width: 1440px;
@@ -683,6 +689,9 @@ video {
 }
 .gap-\[3rem\]{
   gap: 3rem;
+}
+.gap-\[8px\]{
+  gap: 8px;
 }
 .space-y-2 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
