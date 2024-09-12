@@ -6,30 +6,42 @@
     <h3 class="text-[1.8rem] text-main-text font-extrabold font-epilogue mb-[0.7rem]">{{ job.position }}</h3>
     <p class="font-bold text-[1.3rem] text-form-text mb-[1.5rem]">{{ job.company }} | {{  job.location }}</p>
     <div class="hidden lg:block">
-        <div class="mb-[1rem]">
-            <h3 class="text-[14px] font-semibold font-epilogue mb-[0.4rem]">Description</h3>
-            <p class="text-[14px] font-semibold font-epilogue text-form-text">{{ job.description }}</p>
-        </div>
-        <div class="mb-[1rem]">
-            <h3 class="text-[14px] font-semibold font-epilogue mb-[0.4rem]">Requirements</h3>
-            <p class="text-[14px] font-semibold font-epilogue text-form-text">{{ job.qualifications }}</p>
-        </div>
-        <div class="mb-[1rem]">
-            <h3 class="text-[14px] font-semibold font-epilogue mb-[0.4rem]">Benefits</h3>
-            <p class="text-[14px] font-semibold font-epilogue text-form-text">{{ job.benefits }}</p>
-        </div>
-        <div class="mb-[1rem]">
-            <h3 class="text-[14px] font-semibold font-epilogue mb-[0.4rem]">Growth</h3>
-            <p class="text-[14px] font-semibold font-epilogue text-form-text">{{ job.growth }}</p>
-        </div>
+        {% if job.description %}
+            <div class="mb-[1rem]">
+                <h3 class="text-[18px] font-semibold font-epilogue mb-[0.4rem]">Description</h3>
+                <p class="text-[18px] font-semibold font-epilogue text-form-text">{{ job.description }}</p>
+            </div>
+        {% endif %}
+        {% if job.qualifications %}
+            <div class="mb-[1rem]">
+                <h3 class="text-[18px] font-semibold font-epilogue mb-[0.4rem]">Requirements</h3>
+                <p class="text-[18px] font-semibold font-epilogue text-form-text">{{ job.qualifications }}</p>
+            </div>
+        {% endif %}
+        {% if job.benefits %}
+            <div class="mb-[1rem]">
+                <h3 class="text-[18px] font-semibold font-epilogue mb-[0.4rem]">Benefits</h3>
+                <p class="text-[18px] font-semibold font-epilogue text-form-text">{{ job.benefits }}</p>
+            </div>
+        {% endif %}
+        {% if job.growth %}
+            <div class="mb-[1rem]">
+                <h3 class="text-[18px] font-semibold font-epilogue mb-[0.4rem]">Growth</h3>
+                <p class="text-[18px] font-semibold font-epilogue text-form-text">{{ job.growth }}</p>
+            </div>
+        {% endif %}
     </div>
-    <h3 class="hidden lg:block text-[14px] font-semibold font-epilogue mb-[0.4rem]">Skills</h3>
-    <ul class="flex gap-[8px]">
-        {% for language in job.languages.all %}
-            <img class="h-[25px]" src="{{ language.svg_icon.url }}" alt="{{ language.name }}"/>
-        {% endfor %}
-        {% for tool in job.tools.all %}
-            <img class="h-[25px]" src="{{ tool.svg_icon.url }}" alt="{{ tool.name }}"/>
-        {% endfor %}
-    </ul>
+    <div class="mt-auto">
+        {% if job.languages.all or job.tools.all %}
+            <h3 class="hidden lg:block text-[18px] font-semibold font-epilogue mb-[0.8rem]">Skills</h3>
+        {% endif %}
+        <ul class="flex gap-[8px] mb-[1rem]">
+            {% for language in job.languages.all %}
+                <img class="h-[25px] lg:h-[35px]" src="{{ language.svg_icon.url }}" alt="{{ language.name }}"/>
+            {% endfor %}
+            {% for tool in job.tools.all %}
+                <img class="h-[25px] lg:h-[35px]" src="{{ tool.svg_icon.url }}" alt="{{ tool.name }}"/>
+            {% endfor %}
+        </ul>
+    </div>
 </div>

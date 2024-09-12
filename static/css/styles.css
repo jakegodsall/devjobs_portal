@@ -601,6 +601,9 @@ video {
 .mb-\[1rem\]{
   margin-bottom: 1rem;
 }
+.mt-auto{
+  margin-top: auto;
+}
 .block{
   display: block;
 }
@@ -755,6 +758,9 @@ video {
 }
 .self-start{
   align-self: flex-start;
+}
+.self-end{
+  align-self: flex-end;
 }
 .self-stretch{
   align-self: stretch;
@@ -1241,6 +1247,10 @@ body {
 
   .lg\:h-\[80vh\]{
     height: 80vh;
+  }
+
+  .lg\:h-\[35px\]{
+    height: 35px;
   }
 
   .lg\:max-h-\[800px\]{
