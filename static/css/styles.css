@@ -1311,6 +1311,10 @@ body {
   .lg\:text-\[48px\]{
     font-size: 48px;
   }
+
+  .lg\:text-\[26px\]{
+    font-size: 26px;
+  }
 }
 
 @media (prefers-color-scheme: dark){

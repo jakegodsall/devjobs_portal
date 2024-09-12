@@ -10,7 +10,6 @@
       {% include 'job_portal/partials/_floating_input.html' with type="text" name="location" id="location" placeholder="Location" value=form.location.value|default_if_none:'' %}
       {% include 'job_portal/partials/_floating_input.html' with type="number" name="salary" id="salary" placeholder="Salary" value=form.salary.value|default_if_none:'' %}
       
-      {% include 'job_portal/partials/_submit_button.html' with value='Create Job' %}
     </form>
   </section>
 {% endblock %}
