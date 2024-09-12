@@ -3,12 +3,12 @@
         <h2 class="text-main-text font-epilogue text-[3rem] font-extrabold mb-[2rem] lg:mb-[4.8rem] lg:text-[3.6rem] self-start">Featured Jobs</h2>
         <ul class="flex flex-col items-center w-full gap-[2.2rem] mb-[2.8rem] lg:flex-row lg:overflow-x-auto lg:mb-[50px]">
             {% for job in featured_jobs|slice:"4" %}
-                <li class="w-full lg:hidden max-w-[400px]">
+                <li class="w-full lg:hidden max-w-[400px] self-start">
                     {% include 'job_portal/partials/featured-jobs/_job-item.html' with job=job %}
                 </li>
             {% endfor %}
             {% for job in featured_jobs %}
-                <li class="hidden lg:block w-full lg:w-[30%] lg:flex-[0_0_auto]">
+                <li class="hidden self-stretch lg:block w-full lg:w-[30%] lg:flex-[0_0_auto]">
                     {% include 'job_portal/partials/featured-jobs/_job-item.html' with job=job %}
                 </li>
             {% endfor %}
