@@ -1,6 +1,16 @@
-<header class="flex justify-between items-center top-0 py-[2.5rem] w-full px-[2rem] bg-primary-purple">
-  <a href="{% url 'jobs:index' %}">
-      <h1 class="text-[1.4rem] text-secondary-text font-epilogue font-bold tracking-wider">DevJob Portal</h1>
-  </a>
-    {% include 'partials/hamburger/_hamburger.html' %}
+<header class="flex justify-between items-center top-0 py-[2.5rem] w-full px-[2rem] md:px-[4rem] bg-primary-purple">
+    <a href="{% url 'jobs:index' %}">
+      <h1 class="text-[1.4rem] text-secondary-text font-epilogue font-bold tracking-wider md:text-[2.2rem]">DevJob Portal</h1>
+    </a>
+    <div class="md:hidden">
+        {% include 'partials/hamburger/_hamburger.html' %}
+    </div>
+    <div>
+        <ul class="flex font-epilogue gap-[3rem] font-bold text-secondary-text text-[16px]">
+            <li><a href="#">Search Jobs</a></li>
+            <li>|</li>
+            <li><a href="{% url 'users:register_user' %}">Sign Up</a></li>
+            <li><a href="{% url 'users:login' %}">Login</a></li>
+        </ul>
+    </div>
 </header>
