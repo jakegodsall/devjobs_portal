@@ -79,7 +79,7 @@ class Company(models.Model):
 
     profile = models.OneToOneField(UserProfile, on_delete=models.CASCADE, blank=True)
     company_name = models.CharField(max_length=100)
-    logo = models.FileField()
+    logo = models.FileField(upload_to='users/svg_icons/companies/', blank=True)
     location = models.CharField(max_length=100)
     description = models.TextField(max_length=500)
 
