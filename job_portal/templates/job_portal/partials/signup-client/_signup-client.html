@@ -1,7 +1,11 @@
 {% load static %}
 
-<section class="bg-primary-purple text-secondary-text flex flex-col items-center pt-[6.3rem] pb-[5rem] px-[2rem]">
-    <h2 class="text-[3.6rem] font-epilogue mb-[4.5rem] text-center font-extrabold">Join Now to Explore Top Job Opportunities</h2>
-    <img src="{%  static 'job_portal/svg_icons/index/job.svg' %}" alt="a man checking job applications" class="mb-[5rem]" />
-    <a class="w-full text-center text-[2rem] font-semibold bg-secondary-purple text-primary-purple py-[1.4rem]" href="{% url 'users:register_user' %}?user_type=client">Sign Up for Free</a>
+<section class="bg-primary-purple text-secondary-text flex flex-col items-center pt-[6.3rem] pb-[5rem] px-[2rem] lg:px-0 lg:py-[115px]">
+    <img src="{%  static 'job_portal/svg_icons/index/mirror.svg' %}" alt="a man in a suit in front of a mirror" class="hidden lg:absolute lg:translate-y-[-40px] lg:left-[-60px] lg:inline lg:max-w-[480px] lg:flex-1" />
+    <div class="flex flex-col items-center lg:max-w-[650px]">
+        <h2 class="text-[3.6rem] font-epilogue mb-[4.5rem] text-center font-extrabold">Join Now to Explore Top Job Opportunities</h2>
+        <img src="{%  static 'job_portal/svg_icons/index/job.svg' %}" alt="a man checking job applications" class="mb-[5rem] lg:hidden" />
+        <a class="w-full text-center text-[2rem] font-semibold bg-secondary-purple text-primary-purple py-[1.4rem] lg:max-w-[250px]" href="{% url 'users:register_user' %}?user_type=client">Sign Up for Free</a>
+    </div>
+    <img src="{%  static 'job_portal/svg_icons/index/job.svg' %}" alt="a man checking job applications" class="hidden lg:absolute lg:inline lg:translate-y-[-50px] lg:right-[30px] lg:max-w-[300px] lg:flex-1" />
 </section>
