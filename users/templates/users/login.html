@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% if messages %}
-    <ul class="flex flex-col w-full bg-white p-[1rem] items-center">
-        {% for message in messages %}
-        <li class="text-[1.6rem] text-red-500 font-bold">{{ message }}</li>
-        {% endfor %}
-    </ul>
-{% endif %}
+{#{% if messages %}#}
+{#    <ul class="flex flex-col w-full bg-white p-[1rem] items-center">#}
+{#        {% for message in messages %}#}
+{#        <li class="text-[1.6rem] text-red-500 font-bold">{{ message }}</li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#{% endif %}#}
 
-<div class="flex flex-col items-center justify-center mt-[5rem] h-[90vh] max-h-[800px]">
+<div class="w-full flex flex-col items-center justify-center mt-[5rem] h-[90vh] max-h-[800px]">
     {% include 'users/partials/forms/_login-form.html' %}
 </div>
 {% endblock %}
