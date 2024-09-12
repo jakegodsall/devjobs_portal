@@ -24,5 +24,8 @@ html {
 }
 
 body {
-  background-color: var(--secondary-purple);
+  background-color: #dacdfd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
