@@ -109,3 +109,6 @@ class JobApplication(models.Model):
     def __str__(self):
         formatted_date = self.application_date.strftime('%Y/%m/%d')
         return f"{self.client} - {self.job} ({formatted_date})"
+
+    class Meta:
+        verbose_name_plural = "Job Applications"
