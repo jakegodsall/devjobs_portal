@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from django.db import models
 from django.utils.timezone import make_aware, get_default_timezone
 
-from users.models import Company
+from users.models import Company, Client
 
 
 class Language(models.Model):
@@ -90,3 +90,22 @@ class Job(models.Model):
         if result.get("weeks") != 0:
             return f"{result.get('weeks')}w ago"
         return f"{result.get('days')}d ago"
+
+
+class JobApplication(models.Model):
+    class Status(models.TextChoices):
+        PENDING = 'P', 'Pending'
+        ACTIVE = 'A', 'Active'
+        SUCCESS = 'S', 'Success'
+        REJECTED = 'R', 'Rejected'
+
+    job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='applications')
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='clients')
+    status = models.CharField(max_length=1, choices=Status, default=Status.PENDING)
+    application_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+    cover_letter = models.TextField(max_length=500, blank=True, null=True)
+
+    def __str__(self):
+        formatted_date = self.application_date.strftime('%Y/%m/%d')
+        return f"{self.client} - {self.job} ({formatted_date})"
