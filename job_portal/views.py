@@ -6,22 +6,24 @@ from .models import Job
 from .forms import JobForm
 
 
-# Create your views here.
-def index(request):
-    context = {}
+class IndexView(View):
+    template = 'job_portal/index.html'
 
-    # Get 5 random featured jobs
-    featured_jobs = Job.objects.filter(is_featured=True).order_by('?')[:8]
-    context["featured_jobs"] = featured_jobs
+    def get(self, request, *args, **kwargs):
+        context = {}
 
-    if request.user.is_authenticated:
-        context["user_type"] = request.user.user_type
+        # Get 5 random featured jobs
+        featured_jobs = Job.objects.filter(is_featured=True).order_by('?')[:8]
+        context["featured_jobs"] = featured_jobs
 
-    return render(
-        request,
-        'job_portal/index.html',
-        context
-    )
+        if request.user.is_authenticated:
+            context["user_type"] = request.user.user_type
+
+        return render(
+            request,
+            'job_portal/index.html',
+            context
+        )
 
 
 class MyApplicationsView(LoginRequiredMixin, View):
