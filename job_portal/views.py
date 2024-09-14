@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from django.shortcuts import render, redirect
 
@@ -7,14 +8,32 @@ from .forms import JobForm
 
 # Create your views here.
 def index(request):
+    context = {}
+
     # Get 5 random featured jobs
     featured_jobs = Job.objects.filter(is_featured=True).order_by('?')[:8]
+    context["featured_jobs"] = featured_jobs
+
+    if request.user.is_authenticated:
+        context["user_type"] = request.user.user_type
 
     return render(
         request,
         'job_portal/index.html',
-        {"featured_jobs": featured_jobs}
+        context
     )
+
+
+class MyApplicationsView(LoginRequiredMixin, View):
+    template = "job_portal/my-applications.html"
+
+    def get(self, request, *args, **kwargs):
+        context = {
+            'user': request.user
+        }
+
+        return render(request, self.template, context)
+
 
 class CreateJobView(View):
     form_class = JobForm

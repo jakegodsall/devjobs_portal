@@ -86,3 +86,5 @@ MEDIA_ROOT = str(BASE_DIR / 'media')
 MEDIA_URL = 'media/'
 
 AUTH_USER_MODEL = 'users.UserProfile'
+
+LOGIN_URL = 'login/'

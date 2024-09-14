@@ -1300,6 +1300,10 @@ body {
     font-size: 24px;
   }
 
+  .lg\:text-\[26px\]{
+    font-size: 26px;
+  }
+
   .lg\:text-\[3\.6rem\]{
     font-size: 3.6rem;
   }
@@ -1310,10 +1314,6 @@ body {
 
   .lg\:text-\[48px\]{
     font-size: 48px;
-  }
-
-  .lg\:text-\[26px\]{
-    font-size: 26px;
   }
 }
 
