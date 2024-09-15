@@ -1,0 +1,7 @@
+<div class="bg-white p-[15px]">
+    <div class="flex items-center justify-between">
+        <h3 class="font-bold font-epilogue text-[13px]">{{ application.job.position }}</h3>
+        {% include 'job_portal/partials/application/status-icon.html' with status=application.get_status_display %}
+    </div>
+    <p class="text-[13px]">{{ application.job.company }}</p>
+</div>

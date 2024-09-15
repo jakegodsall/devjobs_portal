@@ -1,0 +1,9 @@
+{% if status == "Pending" %}
+    <p class="px-[10px] py-[8px] text-[10px] font-bold rounded-full bg-[#F7DF1E]">{{ status|upper }}</p>
+{% elif status == "Active" %}
+    <p class="px-[10px] py-[8px] text-[10px] font-bold rounded-full bg-[#FF9900]">{{ status|upper }}</p>
+{% elif status == "Success" %}
+    <p class="px-[10px] py-[8px] text-[10px] font-bold rounded-full bg-[#52FF00]">{{ status|upper }}</p>
+{% elif status == "Rejected" %}
+    <p class="px-[10px] py-[8px] text-[10px] font-bold rounded-full bg-[#FF5555]">{{ status|upper }}</p>
+{% endif %}

@@ -1,1 +1,15 @@
 {% extends 'base.html' %}
+
+{% block content %}
+    <section class="w-full px-[18px] h-screen mt-[62px]">
+        <div class="mb-[16px]">
+            <h1 class="text-[32px] font-epilogue font-bold">My Applications</h1>
+            <h2 class="text-[15px] font-epilogue font-bold">Active: 5</h2>
+        </div>
+        <ul class="flex flex-col gap-[14px]">
+            {% for application in applications %}
+                <li>{% include 'job_portal/partials/application/_application-detail.html' %}</li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
