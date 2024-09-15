@@ -1,9 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
-from .models import Job
+from .models import Job, JobApplication
 from .forms import JobForm
+
+from users.models import Client
 
 
 class IndexView(View):
@@ -30,8 +32,14 @@ class MyApplicationsView(LoginRequiredMixin, View):
     template = "job_portal/my-applications.html"
 
     def get(self, request, *args, **kwargs):
+        client = get_object_or_404(Client, profile=request.user)
+        applications = JobApplication.objects.filter(client=client)
+
         context = {
-            'user': request.user
+
+            'user': request.user,
+            'applications': applications,
+            'footer_theme': 'dark'
         }
 
         return render(request, self.template, context)
