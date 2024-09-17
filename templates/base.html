@@ -8,6 +8,7 @@
       {% block title %} DevJob Portal {% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    {% block inline_styles %}{% endblock %}
   </head>
   <body>
     {% include 'partials/header/_header.html' %}
@@ -17,5 +18,6 @@
     {% else %}
         {% include 'partials/footer/_footer-light.html' %}
     {% endif %}
+    {% block scripts %}{% endblock %}
   </body>
 </html>
