@@ -4,8 +4,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {# Favicons #}
+    <link href="{% static 'svg_icons/favicon-light.svg' %}" rel="icon" media="{prefers-color-scheme: light)" />
+    <link href="{% static 'svg_icons/favicon-dark.svg' %}" rel="icon" media="(prefers-color-scheme: dark)"/>
+
     <title>
-      {% block title %} DevJob Portal {% endblock %}
+      {% block title %} Dev Job Portal {% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     {% block inline_styles %}{% endblock %}
