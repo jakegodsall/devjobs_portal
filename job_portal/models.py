@@ -106,8 +106,11 @@ class JobApplication(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     cover_letter = models.TextField(max_length=500, blank=True, null=True)
 
+    def formatted_application_date(self):
+        return self.application_date.strftime('%d/%m/%Y')
+
     def __str__(self):
-        formatted_date = self.application_date.strftime('%Y/%m/%d')
+        formatted_date = self.formatted_application_date()
         return f"{self.client} - {self.job} ({formatted_date})"
 
     class Meta:

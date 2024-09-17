@@ -28,7 +28,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 
 # Static files (CSS, JavaScript, images)
-AWS_STATIC_LOCATION = 'static'
+AWS_STATIC_LOCATION = 'staticfiles'
 STATICFILES_STORAGE = 'devjobs_portal.storages.StaticStorage'
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_STATIC_LOCATION}/'
 

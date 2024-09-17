@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
     <section class="w-full px-[18px] h-screen mt-[62px]">
@@ -12,4 +13,8 @@
             {% endfor %}
         </ul>
     </section>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'job_portal/scripts/my-applications.js' %}"></script>
 {% endblock %}

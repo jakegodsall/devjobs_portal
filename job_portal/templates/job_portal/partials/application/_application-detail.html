@@ -1,7 +1,49 @@
-<div class="bg-white p-[15px]">
+{% load static %}
+
+{% block inline_styles %}
+    <style>
+        .main-container {
+            height: 110px;
+            transition: height 0.5s ease-in-out;
+        }
+
+        .main-container.visible {
+            height: 180px;
+        }
+
+        .extra-info {
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        .extra-info.visible {
+            max-height: 1000px;
+        }
+
+        /* Optional: add some animation or styling to the button */
+        #toggle-button {
+            transition: color 0.3s ease;
+        }
+
+        #toggle-button:hover {
+            color: #6b46c1; /* Darker shade of purple on hover */
+        }
+    </style>
+{% endblock %}
+
+
+<div class="main-container bg-white p-[15px] h-[110px] overflow-hidden" id="main-container">
     <div class="flex items-center justify-between">
         <h3 class="font-bold font-epilogue text-[13px]">{{ application.job.position }}</h3>
         {% include 'job_portal/partials/application/status-icon.html' with status=application.get_status_display %}
     </div>
-    <p class="text-[13px]">{{ application.job.company }}</p>
+    <p class="text-[13px] mb-[15px]">{{ application.job.company }}</p>
+    <p class="underline cursor-pointer font-bold font-epilogue text-right" id="toggle-button">Show More</p>
+    <div id="extra-info" class="extra-info">
+        <p class="text-[13px] font-bold font-epilogue">Date of Application</p>
+        <p class="mb-[20px]">{{ application.formatted_application_date }}</p>
+
+        <a class="bg-primary-purple text-white font-epilogue font-bold p-[7px]" href="#">View Job Listing</a>
+    </div>
+
 </div>
