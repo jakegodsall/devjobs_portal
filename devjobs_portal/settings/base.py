@@ -76,7 +76,7 @@ USE_TZ = True
 # Static files
 
 STATIC_ROOT = str(BASE_DIR / 'static')
-STATIC_URL = 'staticfiles/'
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'staticfiles'
 ]
