@@ -505,6 +505,9 @@ video {
 .static{
   position: static;
 }
+.fixed{
+  position: fixed;
+}
 .absolute{
   position: absolute;
 }
@@ -513,6 +516,9 @@ video {
 }
 .top-0{
   top: 0px;
+}
+.bottom-0{
+  bottom: 0px;
 }
 .z-10{
   z-index: 10;
@@ -644,6 +650,9 @@ video {
 .max-h-\[800px\]{
   max-height: 800px;
 }
+.min-h-screen{
+  min-height: 100vh;
+}
 .w-4\/5{
   width: 80%;
 }
@@ -688,6 +697,9 @@ video {
 }
 .flex-1{
   flex: 1 1 0%;
+}
+.flex-grow{
+  flex-grow: 1;
 }
 .translate-y-\[-2rem\]{
   --tw-translate-y: -2rem;
