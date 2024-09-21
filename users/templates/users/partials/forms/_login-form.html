@@ -1,12 +1,13 @@
  <form
-    class="bg-white p-[3rem] flex flex-col gap-[2.5rem] w-[90%] max-w-[400px] rounded-[0.8rem] shadow-lg"
+    class="bg-white p-[3rem] flex flex-col gap-[2.5rem] w-[90%] max-w-[400px] shadow-lg"
     method="POST"
 >
   {% csrf_token %}
   <h1 class="text-[3.2rem] text-main-text font-epilogue font-bold text-center mb-[5px]">Login</h1>
-
-  {% include 'partials/forms/inputs/_floating_input.html' with type="text" name="username" id="username" placeholder="Username" value=form.username.value|default_if_none:'' %}
-  {% include 'partials/forms/inputs/_floating_input.html' with type="password" name="password" id="password" placeholder="Password" value=form.password.value|default_if_none:'' %}
+    <div class="flex flex-col gap-[3rem]">
+      {% include 'partials/forms/inputs/_floating_input.html' with type="text" name="username" id="username" placeholder="Username" value=form.username.value|default_if_none:'' %}
+      {% include 'partials/forms/inputs/_floating_input.html' with type="password" name="password" id="password" placeholder="Password" value=form.password.value|default_if_none:'' %}
+    </div>
   <button class="block bg-primary-purple text-center text-secondary-text w-full py-[1.2rem] text-[2rem] font-semibold mb-[18px]" type="submit">Login</button>
   <a href="{% url 'users:register_user' %}" class="text-form-text text-[14px] text-center block">Not a member? Sign Up</a>
 </form>

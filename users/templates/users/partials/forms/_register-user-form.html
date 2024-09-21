@@ -6,7 +6,7 @@
     {% csrf_token %}
     <h1 class="text-[3.2rem] text-main-text font-epilogue font-bold text-center mb-[18px]">Sign Up</h1>
 
-    <div class="flex flex-col gap-[2.5rem] mb-[1.5rem]">
+    <div class="flex flex-col gap-[3rem] mb-[1.5rem]">
         {% include 'partials/forms/inputs/_floating_input.html' with type="text" name="username" id="username" placeholder="Username" value=profile_form.username.value|default_if_none:'' %}
         {% include 'partials/forms/inputs/_floating_input.html' with type="email" name="email" id="email" placeholder="Email" value=profile_form.email.value|default_if_none:'' %}
         {% include 'partials/forms/inputs/_floating_input.html' with type="password" name="password1" id="password1" placeholder="Password" value=profile_form.password1.value|default_if_none:'' %}

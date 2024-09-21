@@ -1,14 +1,15 @@
-<div class="flex flex-col">
+<div class="relative flex flex-col">
   <input
-    class="peer text-[20px] placeholder:text-[20px] placeholder:text-transparent focus:outline-none border-b-[0.1rem]"
+    class="peer text-[20px] placeholder:text-transparent focus:outline-none border-b-[0.1rem]"
     type="{{ type }}"
     id="{{ id }}"
     name="{{ name }}"
     value="{{ value }}"
     placeholder="{{ placeholder }}"
+    required
   />
   <label
-    class="text-[20px] absolute translate-y-[-2rem] duration-100 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-[20px] text-form-text peer-focus:translate-y-[-2rem] peer-focus:text-[15px]"
+    class="absolute text-[15px] text-form-text translate-y-[-2rem] duration-200 ease-in-out peer-placeholder-shown:translate-y-0 peer-placeholder-shown:text-[20px] peer-focus:translate-y-[-2rem] peer-focus:text-[15px]"
     for="{{ id }}"
     >{{ placeholder }}</label
   >
