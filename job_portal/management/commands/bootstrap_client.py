@@ -26,8 +26,16 @@ class Command(BaseCommand):
                     password = client['password']
                     first_name = client['first_name']
                     last_name = client['last_name']
+                    location = client['location']
                     avatar = client['avatar']
                     cv = client['cv']
+
+                    # socials
+                    portfolio_url = client['portfolio_url']
+                    github_url = client['github_url']
+                    linkedin_url = client['linkedin_url']
+                    twitter_url = client['twitter_url']
+                    instagram_url = client['instagram_url']
 
                     # Create the UserProfile instance
                     user_profile = UserProfile.objects.create(
@@ -41,8 +49,14 @@ class Command(BaseCommand):
                         profile=user_profile,
                         first_name=first_name,
                         last_name=last_name,
+                        location=location,
                         avatar=avatar,
-                        cv=cv
+                        cv=cv,
+                        portfolio_url=portfolio_url,
+                        github_url=github_url,
+                        linkedin_url=linkedin_url,
+                        twitter_url=twitter_url,
+                        instagram_url=instagram_url
                     )
 
                     self.stdout.write(self.style.SUCCESS(f'Successfully created client {first_name} {last_name}'))

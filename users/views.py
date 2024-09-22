@@ -103,22 +103,20 @@ def register_company(request, user_id):
 
 @login_required
 def profile(request):
+    context = {
+        'footer_theme': 'dark'
+    }
     user_profile = request.user
+    context['user_profile'] = user_profile
     user_type = user_profile.user_type.lower()
     if user_profile.is_superuser:
-        return render(request, "users/superuser_profile.html", {
-        })
+        return render(request, "users/superuser_profile.html", context)
     if user_type == "client":
         client_profile = get_object_or_404(Client, profile=user_profile)
-        print(client_profile)
-        return render(request, "users/client_profile.html", {
-            "user_profile": user_profile,
-            "client_profile": client_profile
-        })
+        context['client_profile'] = client_profile
+        return render(request, "users/client_profile.html", context)
     if user_type == "company":
         company_profile = get_object_or_404(Company, profile=user_profile)
-        return render(request, "users/company_profile.html", {
-            "user_profile": user_profile,
-            "company_profile": company_profile
-        })
+        context['company_profile'] = company_profile
+        return render(request, "users/company_profile.html", context)
     return redirect("users:login")

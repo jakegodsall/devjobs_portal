@@ -32,8 +32,16 @@ class Client(models.Model):
     profile = models.OneToOneField(UserProfile, on_delete=models.CASCADE, blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    avatar = models.ImageField()
-    cv = models.FileField()
+    location = models.CharField(max_length=120)
+    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
+    cv = models.FileField(upload_to='cvs/')
+
+    # socials
+    portfolio_url = models.URLField(max_length=120, null=True, blank=True)
+    github_url = models.URLField(max_length=120, null=True, blank=True)
+    linkedin_url = models.URLField(max_length=120, null=True, blank=True)
+    twitter_url = models.URLField(max_length=120, null=True, blank=True)
+    instagram_url = models.URLField(max_length=120, null=True, blank=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
