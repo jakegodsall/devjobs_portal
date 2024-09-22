@@ -8,6 +8,6 @@
       {% include 'partials/forms/inputs/_floating_input.html' with type="text" name="username" id="username" placeholder="Username" value=form.username.value|default_if_none:'' %}
       {% include 'partials/forms/inputs/_floating_input.html' with type="password" name="password" id="password" placeholder="Password" value=form.password.value|default_if_none:'' %}
     </div>
-  <button class="block bg-primary-purple text-center text-secondary-text w-full py-[1.2rem] text-[2rem] font-semibold mb-[18px]" type="submit">Login</button>
+  <button class="block bg-blue-darkest text-center text-secondary-text w-full py-[1.2rem] text-[2rem] font-semibold mb-[18px]" type="submit">Login</button>
   <a href="{% url 'users:register_user' %}" class="text-form-text text-[14px] text-center block">Not a member? Sign Up</a>
 </form>

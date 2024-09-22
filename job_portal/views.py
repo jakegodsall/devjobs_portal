@@ -13,14 +13,11 @@ class IndexView(View):
 
     def get(self, request, *args, **kwargs):
         context = {}
-
         # Get 5 random featured jobs
         featured_jobs = Job.objects.filter(is_featured=True).order_by('?')[:8]
         context["featured_jobs"] = featured_jobs
-
         if request.user.is_authenticated:
             context["user_type"] = request.user.user_type
-
         return render(
             request,
             'job_portal/index.html',
@@ -34,14 +31,12 @@ class MyApplicationsView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         client = get_object_or_404(Client, profile=request.user)
         applications = JobApplication.objects.filter(client=client)
-
         context = {
 
             'user': request.user,
             'applications': applications,
             'footer_theme': 'dark'
         }
-
         return render(request, self.template, context)
 
 

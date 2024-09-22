@@ -11,8 +11,9 @@ module.exports = {
         "main-text": "var(--main-text)",
         "secondary-text": "var(--secondary-text)",
         "form-text": "var(--form-text)",
-        "primary-purple": "var(--primary-purple)",
-        "secondary-purple": "var(--secondary-purple)"
+        "blue-light": "var(--blue-light)",
+        "blue-primary" : "var(--blue-primary)",
+        "blue-darkest": "var(--blue-darkest)"
       },
       fontFamily: {
         epilogue: ["Epilogue", "system-ui"]

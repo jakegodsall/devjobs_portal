@@ -13,6 +13,6 @@
         {% include 'partials/forms/inputs/_floating_input.html' with type="password" name="password2" id="password2" placeholder="Confirm Password" value=profile_form.password2.value|default_if_none:'' %}
     </div>
     {% include 'partials/forms/inputs/_radio-section.html' %}
-    <button class="block bg-primary-purple text-center text-secondary-text w-full py-[1.2rem] text-[2rem] font-semibold mb-[18px]" type="submit">Create Profile</button>
+    <button class="block bg-blue-primary text-center text-secondary-text w-full py-[1.2rem] text-[2rem] font-semibold mb-[18px]" type="submit">Create Profile</button>
     <a href="{% url 'users:login' %}" class="text-form-text text-[14px] text-center block">Already a member? Login</a>
   </form>

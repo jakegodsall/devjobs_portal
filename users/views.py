@@ -42,16 +42,11 @@ def logout_user(request):
 
 def register_user(request):
     context = {"footer_theme": "dark"}
-
     user_type = request.GET.get('user_type', None)
-
     if request.method == "POST":
-
         profile_form = UserProfileForm(request.POST)
-
         if profile_form.is_valid():
             user = profile_form.save()
-
             user_type = profile_form.cleaned_data["user_type"].lower()
             print("User type: ", user_type)
             if user_type == "client":
@@ -74,9 +69,7 @@ def register_user(request):
 
 def register_client(request, user_id):
     context = {"footer_theme": "dark"}
-
     user = get_object_or_404(UserProfile, pk=user_id)
-
     if request.method == "POST":
         client_form = ClientForm(request.POST, request.FILES)
         context["client_form"] = client_form
@@ -88,9 +81,9 @@ def register_client(request, user_id):
         else:
             return render(request, "users/register_client.html", context)
     client_form = ClientForm()
-
     context["client_form"] = client_form
     return render(request, "users/register_client.html", context)
+
 
 def register_company(request, user_id):
     user = get_object_or_404(UserProfile, pk=user_id)
@@ -108,14 +101,10 @@ def register_company(request, user_id):
     return render(request, "users/register_company.html", {"company_form": company_form})
 
 
-
-
-
 @login_required
 def profile(request):
     user_profile = request.user
     user_type = user_profile.user_type.lower()
-    print("USER TYPE: ", user_type)
     if user_profile.is_superuser:
         return render(request, "users/superuser_profile.html", {
         })

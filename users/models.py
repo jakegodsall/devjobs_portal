@@ -3,30 +3,6 @@ from django.db import models
 from django.contrib.auth import models as auth_models
 from django.contrib.auth.models import User
 
-# class UserProfile(models.Model):
-#     """
-#     UserProfile extends the base User model to include additional fields that
-#     are pertinent to all users, regardless of their type. It utilizes a One-to-One
-#     relationship with the User model to ensure that each user has a unique profile.
-#     The model distinguishes between different user types, such as clients and companies,
-#     to cater to the distinct functionalities and permissions each type requires.
-
-#     Attributes:
-#         user (User): A one-to-one link to Django's built-in User model.
-#         user_type (CharField): The type of user, which can be either a Client or a Company,
-#         as defined by the Type enum.
-#     """
-
-#     class Type(models.TextChoices):
-#         CLIENT = "Client", "Client"
-#         COMPANY = "Company", "Company"
-
-#     user = models.OneToOneField(User, on_delete=models.CASCADE)
-#     user_type = models.CharField(max_length=10, choices=Type.choices)
-
-#     def __str__(self):
-#         return self.user
-    
 
 class UserProfile(auth_models.AbstractUser):
     class Type(models.TextChoices):

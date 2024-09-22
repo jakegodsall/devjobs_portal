@@ -8,8 +8,9 @@
   --main-text: #1D1C1C;
   --secondary-text: #fff;
   --form-text: #979797;
-  --primary-purple: #6100FF;
-  --secondary-purple: #ECE8FF;
+  --blue-light: #E2E3F9;
+  --blue-primary: #1E39C3;
+  --blue-darkest: #14062C;
 }
 
 *,
@@ -21,6 +22,7 @@
 html {
   font-size: 62.5%;
   font-family: "Inter", sans-serif;
+  color: var(--blue-darkest);
 }
 
 body {
