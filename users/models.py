@@ -33,8 +33,8 @@ class Client(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     location = models.CharField(max_length=120)
-    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
-    cv = models.FileField(upload_to='cvs/')
+    avatar = models.ImageField(upload_to='users/avatars/', blank=True, null=True)
+    cv = models.FileField(upload_to='users/cvs/')
 
     # socials
     portfolio_url = models.URLField(max_length=120, null=True, blank=True)
