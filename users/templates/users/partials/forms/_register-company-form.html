@@ -1,4 +1,15 @@
-<form method="POST" enctype="multipart/form-data">
+<form
+    method="POST"
+    class="w-[90%] max-w-[400px] bg-white p-[3rem] shadow-lg"
+    novalidate
+    enctype="multipart/form-data"
+>
     {% csrf_token %}
-    {{ company_form }}
+    <h1 class="text-[3.2rem] text-main-text font-epilogue font-bold text-center mb-[18px]">Sign Up</h1>
+    <div class="flex flex-col gap-[3rem] mb-[3rem]">
+        {% include 'partials/forms/inputs/_floating_input.html' with type="text" name="company_name" placeholder="Company Name" value=company_form.company_name.value|default_if_none:'' %}
+        {% include 'partials/forms/inputs/_floating_input.html' with type="text" name="location" placeholder="Location" value=company_form.location.value|default_if_none:'' %}
+        {% include 'partials/forms/inputs/_file_upload.html' with label="Logo" id="Logo" %}
+    </div>
+    <button class="block bg-blue-primary text-center text-secondary-text w-full py-[1.2rem] text-[2rem] font-semibold mb-[18px]" type="submit">Create Company Profile</button>
 </form>

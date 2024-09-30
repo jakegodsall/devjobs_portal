@@ -86,9 +86,11 @@ def register_client(request, user_id):
 
 
 def register_company(request, user_id):
+    context = {"footer_theme": "dark"}
     user = get_object_or_404(UserProfile, pk=user_id)
     if request.method == "POST":
         company_form = CompanyForm(request.POST, request.FILES)
+        context["company_form"] = company_form
         if company_form.is_valid():
             company_profile = company_form.save(commit=False)
             company_profile.profile = user
@@ -98,7 +100,8 @@ def register_company(request, user_id):
             print(company_form.errors)
             return render(request, "users/register_company.html", {"company_form": company_form})
     company_form = CompanyForm()
-    return render(request, "users/register_company.html", {"company_form": company_form})
+    context["company_form"] = company_form
+    return render(request, "users/register_company.html", context)
 
 
 @login_required
