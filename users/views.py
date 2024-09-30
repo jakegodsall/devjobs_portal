@@ -1,6 +1,6 @@
 # routing
 from django.shortcuts import render, redirect, get_object_or_404
-# authentication
+# scripts
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
@@ -42,27 +42,36 @@ def logout_user(request):
 
 def register_user(request):
     context = {"footer_theme": "dark"}
+
     user_type = request.GET.get('user_type', None)
+
     if request.method == "POST":
         profile_form = UserProfileForm(request.POST)
+
         if profile_form.is_valid():
+            # Save the user and determine the type
             user = profile_form.save()
-            user_type = profile_form.cleaned_data["user_type"].lower()
-            print("User type: ", user_type)
+            user_type = profile_form.cleaned_data["user_type"]
+
+            # Redirect based on the user type
             if user_type == "client":
                 return redirect("users:register_client", user_id=user.pk)
             if user_type == "company":
                 return redirect("users:register_company", user_id=user.pk)
+        # If the form is invalid, log errors and display the form with errors
         else:
-            print(profile_form.initial)
             print(profile_form.errors)
             context["profile_form"] = profile_form
             return render(request, "users/register_user.html", context)
 
-    if user_type:
-        profile_form = UserProfileForm(initial={'user_type': user_type})
+    # If GET request, instantiate the form with or without initial values
     else:
-        profile_form = UserProfileForm()
+        if user_type:
+            profile_form = UserProfileForm(initial={'user_type': user_type})
+        else:
+            profile_form = UserProfileForm()
+
+    # Always pass the form in context for GET and POST
     context["profile_form"] = profile_form
     return render(request, "users/register_user.html", context)
 

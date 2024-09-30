@@ -3,8 +3,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 from .models import Client, Company
 
+
 class UserProfileForm(UserCreationForm):
-    CHOICES = [("Client", "Client"), ("Company", "Company")]
+    CHOICES = [("client", "Client"), ("company", "Company")]
 
     user_type = forms.ChoiceField(label="User Type", choices=CHOICES)
 
@@ -28,4 +29,4 @@ class ClientForm(forms.ModelForm):
 class CompanyForm(forms.ModelForm):
     class Meta:
         model = Company
-        fields =  ["company_name", "logo", "location"]
+        fields = ["company_name", "logo", "location"]

@@ -51,7 +51,7 @@ class Company(models.Model):
     """
     The Company model caters to users that host job listings, providing them with
     a platform to present their company information and post job opportunities.
-    It links back to the UserProfile for authentication and user management, while
+    It links back to the UserProfile for scripts and user management, while
     also incorporating company-specific fields for a comprehensive company profile.
 
     Attributes:
